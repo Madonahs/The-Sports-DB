@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/background_normal">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="24dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/logo" />
+    </LinearLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="280dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="24dp">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway"
+            android:text="@string/signin"
+            android:textColor="@color/black"
+            android:paddingBottom="30dp"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="@font/raleway"
+            android:hint="Email"
+            android:paddingTop="8dp"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginTop="0dp"
+                android:paddingTop="8dp"
+                android:fontFamily="@font/raleway"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp"
+            android:paddingLeft="55dp"
+            android:paddingRight="24dp">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/login"
+                android:layout_width="175dp"
+                android:layout_height="35dp"
+                android:background="@color/white"
+                android:fontFamily="@font/raleway"
+                android:gravity="center"
+                android:text="@string/logintoproceed"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="24dp">
+
+            <TextView
+                android:id="@+id/signup"
+                android:layout_width="165dp"
+                android:layout_height="42dp"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/raleway"
+                android:text="@string/create"
+                android:textSize="16dip" />
+
+            <TextView
+                android:id="@+id/forgotpass"
+                android:layout_width="165dp"
+                android:layout_height="42dp"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/raleway"
+                android:text="@string/forgotpassword"
+                android:textSize="16dip" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>
