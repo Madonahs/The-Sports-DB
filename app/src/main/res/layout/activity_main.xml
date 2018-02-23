@@ -24,4 +24,5 @@
         android:text="@string/logo"
         android:textSize="16sp"/>
 <!-- sample push -->
+    <!-- trying to sign commits-->
 </LinearLayout>
