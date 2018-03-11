@@ -19,7 +19,7 @@ Develop 🔧
 
 ## License
 
-See the [LICENSE.md](LICENSE.txt) file for details
+See the [LICENSE.md]() file for details
 
 ## Design Mock By Me 
 
