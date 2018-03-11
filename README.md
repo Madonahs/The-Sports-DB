@@ -1,7 +1,7 @@
 # BudgetingBuddyDraft
 
-So i have a general idea and i am working on a project, this repository is for my dummy project below. 
-Once Ready i will publish the project to the app store. image by madonah syombua and subject to copyright.
+So I have a general idea and I am working on it privately, this repository is my dummy the project description is below. 
+Once Ready I will publish the project to the app store. image by madonah syombua and subject to copyright.
 
 ## Budget Buddy
 
