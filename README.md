@@ -13,8 +13,8 @@ Develop 🔧
 
 
 ## Authors
-* **Madona Syombua** 
-* **Leonard Muia** 
+* **Madona Syombua** - *Lead/Core developer* 
+* **Leonard Muia** - *Core developer | XML Layouts* 
 
 
 ## License
