@@ -9,7 +9,7 @@ This will be a budgeting app.
 
 ## Mode
 Develop 🔧
-
+[TEST the app](https://play.google.com/store/apps/details?id=com.madonasyombua.budgetbuddy)
 
 
 ## Authors
