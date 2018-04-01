@@ -24,3 +24,12 @@ See the [LICENSE.md](https://github.com/Madonahs/Budgeting-Buddy/blob/master/LIC
 ## Design Mock By Me 
 
 ![budgeting app](https://user-images.githubusercontent.com/11560987/35936884-3214f19a-0c0a-11e8-954d-95fcf159bd31.png)
+
+
+## External Libraries
+
+Bind Views - ButterKnife - https://github.com/JakeWharton/butterknife
+
+Material Spinner - https://github.com/jaredrummler/MaterialSpinner
+
+Number Progress Bar - https://github.com/daimajia/NumberProgressBar
