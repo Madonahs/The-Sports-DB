@@ -28,8 +28,8 @@ See the [LICENSE.md](https://github.com/Madonahs/Budgeting-Buddy/blob/master/LIC
 
 ## External Libraries
 
-Bind Views - ButterKnife - https://github.com/JakeWharton/butterknife
+Bind Views - ButterKnife - [Here](https://github.com/JakeWharton/butterknife)
 
-Material Spinner - https://github.com/jaredrummler/MaterialSpinner
+Material Spinner - [Here](https://github.com/jaredrummler/MaterialSpinner)
 
-Number Progress Bar - https://github.com/daimajia/NumberProgressBar
+Number Progress Bar - [Here](https://github.com/daimajia/NumberProgressBar)
