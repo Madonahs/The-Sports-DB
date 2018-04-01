@@ -1,10 +1,12 @@
-package com.madonasyombua.budgetingbuddydummy;
+package com.madonasyombua.budgetingbuddydummy.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.madonasyombua.budgetingbuddydummy.R;
 
 public class LoginActivity extends AppCompatActivity {
  TextView signup;
