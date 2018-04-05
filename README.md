@@ -7,7 +7,7 @@ Once Ready I will publish the project to the app store. image by madonah syombua
 
 This will be a budgeting app.
 
-## Mode
+## App Store
 Develop 🔧
 [TEST the app](https://play.google.com/store/apps/details?id=com.madonasyombua.budgetbuddy)
 
