@@ -30,9 +30,8 @@ Material Spinner - [Here](https://github.com/jaredrummler/MaterialSpinner)
 Number Progress Bar - [Here](https://github.com/daimajia/NumberProgressBar)
 
 
-## Design Mock By Me 
+## Design Mock By Me - Licence
 
 ![budgeting app](https://user-images.githubusercontent.com/11560987/35936884-3214f19a-0c0a-11e8-954d-95fcf159bd31.png)
-
 
 
