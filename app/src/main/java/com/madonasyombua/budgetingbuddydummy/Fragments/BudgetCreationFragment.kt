@@ -9,8 +9,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.madonasyombua.budgetingbuddydummy.Fragments.Budget.DummyContent
-import com.madonasyombua.budgetingbuddydummy.Fragments.Budget.DummyContent.DummyItem
+import com.madonasyombua.budgetingbuddydummy.Fragments.Budget.Content
+import com.madonasyombua.budgetingbuddydummy.Fragments.Budget.Content.DummyItem
 import com.madonasyombua.budgetingbuddydummy.R
 
 /**
@@ -49,7 +49,7 @@ class BudgetCreationFragment : Fragment() {
             } else {
                 view.layoutManager = GridLayoutManager(context, mColumnCount)
             }
-            view.adapter = FragmentRecyclerViewAdapter(DummyContent.ITEMS, mListener)
+            view.adapter = FragmentRecyclerViewAdapter(Content.ITEMS, mListener)
         }
         return view
     }

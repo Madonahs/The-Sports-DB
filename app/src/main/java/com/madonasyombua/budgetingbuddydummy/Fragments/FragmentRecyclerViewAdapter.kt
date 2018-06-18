@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.madonasyombua.budgetingbuddydummy.Fragments.Budget.DummyContent.DummyItem
+import com.madonasyombua.budgetingbuddydummy.Fragments.Budget.Content.DummyItem
 import com.madonasyombua.budgetingbuddydummy.Fragments.BudgetCreationFragment.OnListFragmentInteractionListener
 import com.madonasyombua.budgetingbuddydummy.R
 

@@ -9,7 +9,7 @@ import java.util.*
  *
  * TODO: Replace all uses of this class before publishing your app.
  */
-object DummyContent {
+object Content {
 
     /**
      * An array of sample (dummy) items.
