@@ -9,7 +9,7 @@ This will be a budgeting app.
 
 ## App Store
 Develop 🔧
-[TEST the app](https://play.google.com/store/apps/details?id=com.madonasyombua.budgetbuddy)
+[TEST the app](https://play.google.com/store/apps/details?id=com.madonasyombua.straighttalk)
 
 
 ## Authors
