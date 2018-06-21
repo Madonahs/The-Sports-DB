@@ -1,6 +1,6 @@
 # BudgetingBuddyDraft
 
-So I have a general idea and I am working on it privately, this repository is my dummy and i am trying to use Kotlin to build the app.
+This repository is my dummy and i am trying to use Kotlin to build the app.
 
 Kotlin is a statically typed programming language that runs on the Java virtual machine and also can be compiled to JavaScript source code or use the LLVM compiler infrastructure.
 
