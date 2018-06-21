@@ -1,33 +1,18 @@
 # BudgetingBuddyDraft
 
-So I have a general idea and I am working on it privately, this repository is my dummy the project description is below. 
-Once Ready I will publish the project to the app store. image by madonah syombua and subject to copyright.
+So I have a general idea and I am working on it privately, this repository is my dummy and i am trying to use Kotlin to build the app.
+
+Kotlin is a statically typed programming language that runs on the Java virtual machine and also can be compiled to JavaScript source code or use the LLVM compiler infrastructure.
 
 ## Budget Buddy
 
 This will be a budgeting app.
-
-## App Store
-Develop 🔧
-[TEST the app](https://play.google.com/store/apps/details?id=com.madonasyombua.straighttalk)
-
-
-## Authors
-* **Madona Syombua** - *Lead/Core developer* 
-* **Leonard Muia** - *Core developer | XML Layouts* 
 
 
 ## License
 
 See the [LICENSE.md](https://github.com/Madonahs/Budgeting-Buddy/blob/master/LICENSE.md) file for details
 
-## External Libraries
-
-Bind Views - ButterKnife - [Here](https://github.com/JakeWharton/butterknife)
-
-Material Spinner - [Here](https://github.com/jaredrummler/MaterialSpinner)
-
-Number Progress Bar - [Here](https://github.com/daimajia/NumberProgressBar)
 
 
 ## Design Mock By Me - Licence
