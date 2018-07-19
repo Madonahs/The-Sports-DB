@@ -1,8 +1,6 @@
 # BudgetingBuddyDraft
 
-This repository is my dummy and i am trying to use Kotlin to build the app.
-
-Kotlin is a statically typed programming language that runs on the Java virtual machine and also can be compiled to JavaScript source code or use the LLVM compiler infrastructure.
+[![google-play-badge](https://user-images.githubusercontent.com/11560987/40274558-bf096688-5b9e-11e8-8bb9-56105415a934.png)](https://play.google.com/store/apps/details?id=com.madonasyombua.budgetbuddy)
 
 ## Budget Buddy
 
