@@ -1,4 +1,4 @@
-# BudgetingBuddyDraft
+# Budgeting Buddy
 
 [![google-play-badge](https://user-images.githubusercontent.com/11560987/40274558-bf096688-5b9e-11e8-8bb9-56105415a934.png)](https://play.google.com/store/apps/details?id=com.madonasyombua.budgetbuddy)
 
