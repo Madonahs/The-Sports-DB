@@ -8,10 +8,10 @@ Budgeting Buddy is a simple App meant to help maintain your monthly and daily bu
 
 ## SOME FEATURES INCLUDE
 
-• Check your Monthly budget
-• See all Transaction on a particular Date
-• Add daily Expenses
-• Graph on Premium Version
+* **Check your Monthly budget**
+* **See all Transaction on a particular Date**
+* **Add daily Expenses**
+* **Graph on Premium Version**
 
 ## License
 
