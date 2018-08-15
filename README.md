@@ -13,16 +13,13 @@ Budgeting Buddy is a simple App meant to help maintain your monthly and daily bu
 * **Add daily Expenses**
 * **Graph on Premium Version**
 
-## License
-
-See the [LICENSE.md](https://github.com/Madonahs/Budgeting-Buddy/blob/master/LICENSE.md) file for details
-
 
 
 ## Design Mock By Me - Licence
 
 ![budgeting app](https://user-images.githubusercontent.com/11560987/35936884-3214f19a-0c0a-11e8-954d-95fcf159bd31.png)
 
+## License
 
  Copyright [2018] [Madona Syombua]
 
