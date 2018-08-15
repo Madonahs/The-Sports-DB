@@ -6,7 +6,7 @@
 
 Budgeting Buddy is a simple App meant to help maintain your monthly and daily budgets, the app is free and you should be able to enjoy all feature without problems. To set up your wallet visit the income section and all you want to spend.
 
-## SOME FEATURES INCLUDE
+## Some Features Include
 
 * **Check your Monthly budget**
 * **See all Transaction on a particular Date**
