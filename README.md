@@ -11,9 +11,6 @@ Budgeting Buddy is a simple App meant to help maintain your monthly and daily bu
 
 ![budgeting app](https://user-images.githubusercontent.com/11560987/35936884-3214f19a-0c0a-11e8-954d-95fcf159bd31.png)
 
-## CRUD Methods used
-<img width="672" alt="content provider crud" src="https://user-images.githubusercontent.com/11560987/44476884-c1699b00-a5fe-11e8-8938-f57eeb53afbb.PNG">
-
 
 ## License
 
