@@ -1,8 +1,8 @@
-# Budgeting Buddy
+# Download Budgeting Buddy Here
 
 [![google-play-badge](https://user-images.githubusercontent.com/11560987/40274558-bf096688-5b9e-11e8-8bb9-56105415a934.png)](https://play.google.com/store/apps/details?id=com.madonasyombua.budgetbuddy)
 
-## Budget Buddy
+## About
 
 Budgeting Buddy is a simple App meant to help maintain your monthly and daily budgets, the app is free and you should be able to enjoy all feature without problems. To set up your wallet visit the income section and all you want to spend.
 
