@@ -38,12 +38,8 @@ class FragmentRecyclerViewAdapter(private val mValues: List<DummyItem>, private 
 
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val mIdView: TextView = mView.findViewById(R.id.item_number) as TextView
-        val mContentView: TextView
+        val mContentView: TextView = mView.findViewById(R.id.content) as TextView
         var mItem: DummyItem? = null
-
-        init {
-            mContentView = mView.findViewById(R.id.content) as TextView
-        }
 
         override fun toString(): String {
             return super.toString() + " '" + mContentView.text + "'"
