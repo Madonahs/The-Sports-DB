@@ -8,9 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.madonasyombua.budgetingbuddydummy.Data.ExpenseData
 
-import com.madonasyombua.budgetbuddy.R
-import com.madonasyombua.budgetbuddy.model.ExpenseData
+
 import com.madonasyombua.budgetingbuddydummy.R
 
 import java.text.SimpleDateFormat
@@ -24,7 +24,7 @@ class TransactionAdapter(private val activity: Activity,
                          private val totalExpenseAmount: Double) : RecyclerView.Adapter<TransactionAdapter.GeneralViewHolder>() {
 
 
-    internal open inner class GeneralViewHolder(view: View) : RecyclerView.ViewHolder(view)
+    open inner class GeneralViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
 
     private inner class CustomViewHolder internal constructor(view: View) : GeneralViewHolder(view) {
