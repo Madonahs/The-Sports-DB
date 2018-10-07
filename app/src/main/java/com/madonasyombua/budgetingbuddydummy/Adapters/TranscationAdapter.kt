@@ -28,7 +28,7 @@ class TransactionAdapter(private val activity: Activity,
 
 
     private inner class CustomViewHolder internal constructor(view: View) : GeneralViewHolder(view) {
-        private val transListView: RecyclerView
+        val transListView: RecyclerView
         private val totalExpenseDateView: TextView
         private val totalExpenseAmountView: TextView
 
