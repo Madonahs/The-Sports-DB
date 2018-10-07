@@ -19,7 +19,7 @@ Budgeting Buddy is a simple App meant to help maintain your monthly and daily bu
 
 ## License
 
- Copyright [2018] [Madona Syombua]
+ Copyright [2018] [Madonah Syombua]
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
