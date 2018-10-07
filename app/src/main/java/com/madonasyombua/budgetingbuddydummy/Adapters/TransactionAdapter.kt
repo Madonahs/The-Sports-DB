@@ -28,18 +28,10 @@ class TransactionAdapter(private val activity: Activity,
 
 
     private inner class CustomViewHolder internal constructor(view: View) : GeneralViewHolder(view) {
-        val transListView: RecyclerView
-        private val totalExpenseDateView: TextView
-        private val totalExpenseAmountView: TextView
+        val transListView: RecyclerView = view.findViewById(R.id.recyclerviewList)
+        private val totalExpenseDateView: TextView = view.findViewById(R.id.totalExpenseDate)
+        private val totalExpenseAmountView: TextView = view.findViewById(R.id.totalExpenseAmount)
 
-
-        init {
-
-            this.transListView = view.findViewById(R.id.recyclerviewList)
-            this.totalExpenseDateView = view.findViewById(R.id.totalExpenseDate)
-            this.totalExpenseAmountView = view.findViewById(R.id.totalExpenseAmount)
-
-        }
 
         internal fun setTotalExpenseDate(date: String) {
             totalExpenseDateView.text = date
@@ -55,11 +47,10 @@ class TransactionAdapter(private val activity: Activity,
 
     private inner class MonthSummaryCard internal constructor(view: View) : GeneralViewHolder(view) {
 
-        private val walletAmountView: TextView
+        private val walletAmountView: TextView = view.findViewById(R.id.walletAmount)
         private val totalExpensesPerMonth: TextView
 
         init {
-            this.walletAmountView = view.findViewById(R.id.walletAmount)
             this.walletAmountView.setTextColor(ContextCompat.getColor(activity, R.color.green_500))
             this.totalExpensesPerMonth = view.findViewById(R.id.totalExpensesPerMonth)
             this.totalExpensesPerMonth.setTextColor(ContextCompat.getColor(activity, R.color.red_500))
@@ -134,3 +125,4 @@ class TransactionAdapter(private val activity: Activity,
         return arrayListArrayList.size
     }
 }
+
