@@ -1,7 +1,7 @@
 
 
 ### Disclaimer
-The app is written using the Java Language but I will use this repository to try and write the entire app again using Kotlin as a way of learning some Kotlin 😀, if you want to join me as I learn some Kotlin you can send me a Contact Me Here. [Madonah](https://twitter.com/madonah12?lang=en)
+The app is written using the Java Language but I will use this repository to try and write the entire app again using Kotlin as a way of learning some Kotlin 😀.
 
 ## Download Budgeting Buddy Here
 
