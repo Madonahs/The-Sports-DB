@@ -1,11 +1,14 @@
 
 
-### Disclaimer
-The app is written using the Java Language but I will use this repository to try and write the entire app again using Kotlin as a way of learning some Kotlin 😀.
-
 ## Download Budgeting Buddy Here
 
 [![google-play-badge](https://user-images.githubusercontent.com/11560987/40274558-bf096688-5b9e-11e8-8bb9-56105415a934.png)](https://play.google.com/store/apps/details?id=com.madonasyombua.budgetbuddy)
+
+
+### Disclaimer
+The app is written using the Java Language but I will use this repository to try and write the entire app again using Kotlin as a way of learning some Kotlin 😀.
+
+
 
 ## About
 
