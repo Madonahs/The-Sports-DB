@@ -13,7 +13,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.madonasyombua.budgetingbuddydummy.Data.ExpenseData
 
 
 import com.madonasyombua.budgetingbuddydummy.R
