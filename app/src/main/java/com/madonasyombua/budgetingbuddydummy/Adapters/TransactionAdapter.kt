@@ -100,16 +100,16 @@ class TransactionAdapter(private val activity: Activity,
             holder1.transListView.layoutManager = LinearLayoutManager(activity)
             val itemsAdapter = TransactionListAdapter(activity, arrayListArrayList[position])
             holder1.transListView.adapter = itemsAdapter
-            if (arrayListArrayList[position][0].getExpenseDate().equals(SimpleDateFormat("MMM dd, yyyy", Locale.US).format(Date())))
+            if (arrayListArrayList[position][0].expenseDate.equals(SimpleDateFormat("MMM dd, yyyy", Locale.US).format(Date())))
                 holder1.setTotalExpenseDate("Today")
             else
-                holder1.setTotalExpenseDate(arrayListArrayList[position][0].getExpenseDate())
+                holder1.setTotalExpenseDate(arrayListArrayList[position][0].expenseDate)
 
             for (expenseData in arrayListArrayList[position]) {
-                if (expenseData.getExpenseType().equals("Expense"))
-                    totalExpense += expenseData.getExpenseAmount()
+                if (expenseData.expenseType.equals("Expense"))
+                    totalExpense += expenseData.expenseAmount
                 else
-                    totalIncome += expenseData.getExpenseAmount()
+                    totalIncome += expenseData.expenseAmount
             }
             val amount = totalIncome - totalExpense
             if (amount < 0)
