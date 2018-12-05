@@ -6,7 +6,7 @@
 
 
 ### Disclaimer
-The app is written using the Java Language but I will use this repository to try and write the entire app again using Kotlin as a way of learning some Kotlin 😀.
+The app is written using the Java Language but I will use this repository to try and write the entire app again using Kotlin as a way of learning some Kotlin 😀. **So NOTE the app might be broken at launch.**
 
 
 
