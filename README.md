@@ -11,7 +11,6 @@ The app is written using the Java Language but I will use this repository to try
 
 
 ## About
-
 Budgeting Buddy is a simple App meant to help maintain your monthly and daily budgets, the app is free and you should be able to enjoy all feature without problems. To set up your wallet visit the income section and all you want to spend. 
 
 
