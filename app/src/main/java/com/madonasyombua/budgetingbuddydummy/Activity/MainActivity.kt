@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val timer = object : CountDownTimer((4 * 1000).toLong(), 1000) {
+        object : CountDownTimer((4 * 1000).toLong(), 1000) {
             override fun onTick(timing: Long) {
                 //do something display anything here. hence this is where my logo goes.
             }

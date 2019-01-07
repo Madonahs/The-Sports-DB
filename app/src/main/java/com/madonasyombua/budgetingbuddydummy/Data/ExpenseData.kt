@@ -22,7 +22,8 @@ class ExpenseData : Parcelable, Serializable {
 
     }
 
-    constructor(id: Int, expenseName: String, expenseType: String, expenseAmount: Double, expenseDate: String, note: String, latitude: Double, longitude: Double) {
+    constructor(id: Int, expenseName: String, expenseType: String,
+                expenseAmount: Double, expenseDate: String, note: String, latitude: Double, longitude: Double) {
         this.id = id
         this.expenseName = expenseName
         this.expenseType = expenseType
