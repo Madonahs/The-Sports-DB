@@ -1,4 +1,4 @@
-package com.madonasyombua.budgetingbuddydummy.Activity
+package com.madonasyombua.budgetingbuddydummy.activity
 
 import android.content.Intent
 import android.os.CountDownTimer

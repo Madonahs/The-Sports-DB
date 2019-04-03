@@ -1,10 +1,8 @@
-package com.madonasyombua.budgetingbuddydummy.Data
+package com.madonasyombua.budgetingbuddydummy.data
 
 import android.annotation.SuppressLint
 import android.os.Parcel
 import android.os.Parcelable
-
-import java.io.Serializable
 
 class ExpenseItem : Parcelable {
 

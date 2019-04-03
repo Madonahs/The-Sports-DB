@@ -1,4 +1,4 @@
-package com.madonasyombua.budgetingbuddydummy.Fragments
+package com.madonasyombua.budgetingbuddydummy.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.madonasyombua.budgetingbuddydummy.Fragments.Budget.Content
-import com.madonasyombua.budgetingbuddydummy.Fragments.Budget.Content.DummyItem
+import com.madonasyombua.budgetingbuddydummy.fragments.Budget.Content
+import com.madonasyombua.budgetingbuddydummy.fragments.Budget.Content.DummyItem
 import com.madonasyombua.budgetingbuddydummy.R
 
 /**
