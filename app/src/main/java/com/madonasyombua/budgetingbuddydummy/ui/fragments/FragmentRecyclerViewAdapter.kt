@@ -1,12 +1,12 @@
-package com.madonasyombua.budgetingbuddydummy.fragments
+package com.madonasyombua.budgetingbuddydummy.ui.fragments
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.madonasyombua.budgetingbuddydummy.fragments.Budget.Content.DummyItem
-import com.madonasyombua.budgetingbuddydummy.fragments.BudgetCreationFragment.OnListFragmentInteractionListener
+import com.madonasyombua.budgetingbuddydummy.ui.fragments.Budget.Content.DummyItem
+import com.madonasyombua.budgetingbuddydummy.ui.fragments.BudgetCreationFragment.OnListFragmentInteractionListener
 import com.madonasyombua.budgetingbuddydummy.R
 
 /**
