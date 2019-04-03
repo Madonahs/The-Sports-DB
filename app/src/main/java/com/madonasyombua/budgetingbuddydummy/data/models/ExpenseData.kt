@@ -18,9 +18,7 @@ class ExpenseData : Parcelable, Serializable {
     var latitude: Double = 0.toDouble()
     var longitude: Double = 0.toDouble()
 
-    constructor() {
 
-    }
 
     constructor(id: Int, expenseName: String, expenseType: String,
                 expenseAmount: Double, expenseDate: String, note: String, latitude: Double, longitude: Double) {
