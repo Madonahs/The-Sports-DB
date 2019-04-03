@@ -1,4 +1,4 @@
-package com.madonasyombua.budgetingbuddydummy.activity
+package com.madonasyombua.budgetingbuddydummy.ui.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

@@ -1,6 +1,4 @@
-package com.madonasyombua.budgetingbuddydummy.Utilities
-
-import com.madonasyombua.budgetingbuddydummy.R
+package com.madonasyombua.budgetingbuddydummy.utilities
 
 object ImageAndColorUtil {
 

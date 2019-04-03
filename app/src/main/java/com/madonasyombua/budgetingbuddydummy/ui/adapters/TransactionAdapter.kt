@@ -1,4 +1,4 @@
-package com.madonasyombua.budgetingbuddydummy.adapters
+package com.madonasyombua.budgetingbuddydummy.ui.adapters
 
 import android.app.Activity
 import android.support.v4.content.ContextCompat
@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.madonasyombua.budgetingbuddydummy.data.ExpenseData
+import com.madonasyombua.budgetingbuddydummy.data.models.ExpenseData
 
 
 import com.madonasyombua.budgetingbuddydummy.R

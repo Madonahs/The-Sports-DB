@@ -1,4 +1,4 @@
-package com.madonasyombua.budgetingbuddydummy.fragments.Budget
+package com.madonasyombua.budgetingbuddydummy.ui.fragments.Budget
 
 import java.util.*
 

@@ -1,4 +1,4 @@
-package com.madonasyombua.budgetingbuddydummy.data
+package com.madonasyombua.budgetingbuddydummy.data.models
 
 import android.annotation.SuppressLint
 import android.os.Parcel
