@@ -17,7 +17,7 @@ Budgeting Buddy is a simple Android Application meant to help maintain your mont
 ## License
 
 ```
- Copyright [2018] [Madonah Syombua]
+ Copyright [2018] [Madona Syombua]
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
