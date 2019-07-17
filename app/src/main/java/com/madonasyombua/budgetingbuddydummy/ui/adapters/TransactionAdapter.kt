@@ -32,7 +32,6 @@ class TransactionAdapter(private val activity: Activity,
         private val totalExpenseDateView: TextView = view.findViewById(R.id.totalExpenseDate)
         private val totalExpenseAmountView: TextView = view.findViewById(R.id.totalExpenseAmount)
 
-
         internal fun setTotalExpenseDate(date: String) {
             totalExpenseDateView.text = date
         }
@@ -65,13 +64,11 @@ class TransactionAdapter(private val activity: Activity,
         }
     }
 
-
     override fun getItemViewType(position: Int): Int {
         return if (position == 0) -1 else position
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): GeneralViewHolder {
-
 
         val holder: GeneralViewHolder
         val view: View
@@ -98,12 +95,10 @@ class TransactionAdapter(private val activity: Activity,
             var totalExpense = 0.0
             var totalIncome = 0.0
             holder1.transListView.layoutManager = LinearLayoutManager(activity)
-            val itemsAdapter = TransactionListAdapter(activity, arrayListArrayList[position])
-            holder1.transListView.adapter = itemsAdapter
             if (arrayListArrayList[position][0].expenseDate.equals(SimpleDateFormat("MMM dd, yyyy", Locale.US).format(Date())))
                 holder1.setTotalExpenseDate("Today")
             else
-                holder1.setTotalExpenseDate(arrayListArrayList[position][0].expenseDate)
+                holder1.setTotalExpenseDate("");
 
             for (expenseData in arrayListArrayList[position]) {
                 if (expenseData.expenseType.equals("Expense"))
