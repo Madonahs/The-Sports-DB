@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Budgeting Buddy Draft</string>
+    <string name="logintoproceed">Login To Proceed</string>
+    <string name="create">Create Account</string>
+    <string name="forgotpassword">Forgot Password?</string>
+    <string name="signin">Sign In</string>
+    <string name="alreadyamemeber">Already a member? Login</string>
+    <string name="createnewaccount">Create Account</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="email">Email</string>
+    <string name="reenterpassword">Re Enter Email</string>
+    <string name="yourWallet">Wallet</string>
+    <string name="password">Password</string>
+    <string name="logo">LOGO Displaying Here</string>
+    <string name="monthBalance">Monthly Balance</string>
+    <string name="walletBalance">Wallet Balance</string>
+</resources>

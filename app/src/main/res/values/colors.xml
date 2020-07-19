@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#a372cb</color>
+    <color name="colorPrimaryDark">#6b3098</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="white">#FFFF</color>
+
+
+    <color name="RebeccaPurple">#663399</color>
+    <color name="PaleVioletRed">#DB7093</color>
+    <color name="Brown">#8B4513</color>
+    <color name="DarkRed">#8B0000</color>
+    <color name="DarkGreen">#006400</color>
+    <color name="Tomato">#FF6347</color>
+    <color name="DarkGray">#A9A9A9</color>
+    <color name="LightGreen">#90EE90</color>
+    <color name="LightBlue">#ADD8E6</color>
+    <color name="IndianRed">#CD5C5C</color>
+    <color name="MediumPurple">#9370DB</color>
+    <color name="YellowGreen">#9ACD32</color>
+    <color name="Lime">#00FF00</color>
+    <color name="SandyBrown">#F4A460</color>
+    <color name="RosyBrown">#BC8F8F</color>
+    <color name="PaleTurquoise">#AFEEEE</color>
+    <color name="Peru">#CD853F</color>
+    <color name="RoyalBlue">#4169E1</color>
+    <color name="PowderBlue">#B0E0E6</color>
+    <color name="DeepPink">#FF1493</color>
+    <color name="Chocolate">#D2691E</color>
+    <color name="LightSlateGray">#778899</color>
+    <color name="MediumSeaGreen">#3CB371</color>
+    <color name="Marroon">#800000</color>
+    <color name="OrangeRed">#FF4500</color>
+    <color name="DarkSlateBlue">#483D8B</color>
+    <color name="Gold">#FFD700</color>
+    <color name="Indigo">#4B0082</color>
+    <color name="Kakhi">#F0E68C</color>
+
+
+
+    <color name="black">#000000</color>
+    <color name="shade">#f2f2f2</color>
+
+    <color name="red_500">#F44336</color>
+    <color name="red_200">#EF9A9A</color>
+    <color name="green_500">#4CAF50</color>
+    <color name="green_200">#A5D6A7</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="orange_200">#FFCC80</color>
+    <color name="grey_200">#EEEEEE</color>
+
+</resources>
