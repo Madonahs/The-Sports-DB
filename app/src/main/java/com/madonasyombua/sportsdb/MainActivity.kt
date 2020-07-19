@@ -1,9 +1,9 @@
-package com.madonasyombua.budgetingbuddydummy
+package com.madonasyombua.sportsdb
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-import com.madonasyombua.budgetingbuddydummy.R
+import com.madonasyombua.sportsdb.R
 
 class MainActivity : AppCompatActivity() {
 

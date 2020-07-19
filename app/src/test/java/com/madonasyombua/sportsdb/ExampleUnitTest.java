@@ -1,4 +1,4 @@
-package com.madonasyombua.budgetingbuddydummy;
+package com.madonasyombua.sportsdb;
 
 import org.junit.Test;
 

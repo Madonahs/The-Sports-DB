@@ -1,4 +1,4 @@
-package com.madonasyombua.budgetingbuddydummy;
+package com.madonasyombua.sportsdb;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
