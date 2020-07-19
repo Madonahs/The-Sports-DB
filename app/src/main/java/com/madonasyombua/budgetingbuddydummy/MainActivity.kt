@@ -1,16 +1,16 @@
-package com.madonasyombua.budgetingbuddydummy.ui.activity
+package com.madonasyombua.budgetingbuddydummy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import com.madonasyombua.budgetingbuddydummy.R
 
-class SignupActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
-
+        setContentView(R.layout.activity_main)
 
     }
+
 }
