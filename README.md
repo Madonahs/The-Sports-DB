@@ -25,7 +25,7 @@ Just a personal project playing with the free [SportsDB](https://www.thesportsdb
 ## License
 
 ```
- Copyright [2018] [Madona Syombua]
+ Copyright [2020] [Madona Syombua]
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
