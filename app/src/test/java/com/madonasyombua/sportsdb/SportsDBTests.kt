@@ -3,7 +3,6 @@ package com.madonasyombua.sportsdb
 import android.content.Context
 import android.os.Build
 import android.support.test.InstrumentationRegistry
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.espresso.matcher.ViewMatchers.assertThat
 import com.madonasyombua.sportsdb.data.local.SportDB
@@ -12,7 +11,6 @@ import com.madonasyombua.sportsdb.data.local.SportsEntity
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.After
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -23,10 +21,6 @@ import org.robolectric.annotation.Config
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.O_MR1])
 class SportsDBTests {
-    @get:Rule
-    @JvmField
-    var instantTaskExecutorRule = InstantTaskExecutorRule()
-
     private var sportDao: SportDao?= null
     private var sportsDataBase: SportDB? = null
 
@@ -41,10 +35,6 @@ class SportsDBTests {
                 .allowMainThreadQueries()
                 .build()
         sportDao = sportsDataBase?.getSportsDao()
-
-
-
-
     }
 
     @Test
@@ -69,6 +59,4 @@ class SportsDBTests {
     fun closeTheDB() {
         sportsDataBase?.close()
     }
-
-
 }
