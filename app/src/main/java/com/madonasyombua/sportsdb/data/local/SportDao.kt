@@ -15,7 +15,7 @@ import androidx.room.OnConflictStrategy.REPLACE
 @Dao
 interface SportDao {
     @Query("SELECT * FROM sportsentity")
-    fun getAllData() : List<SportsEntity>
+    fun getAllSports() : List<SportsEntity>
 
     @Insert(onConflict = REPLACE)
     fun insertSportsData(sportEntity : SportsEntity)
