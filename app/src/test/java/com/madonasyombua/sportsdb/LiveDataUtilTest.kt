@@ -1,6 +1,5 @@
-package com.madonasyombua.sportsdb.localdbtests
+package com.madonasyombua.sportsdb
 
-import androidx.annotation.Nullable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import java.util.concurrent.CountDownLatch

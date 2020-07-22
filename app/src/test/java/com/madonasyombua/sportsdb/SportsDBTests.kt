@@ -1,13 +1,11 @@
-package com.madonasyombua.sportsdb.localdbtests
+package com.madonasyombua.sportsdb
 
 import android.content.Context
 import android.os.Build
 import android.support.test.InstrumentationRegistry
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.espresso.matcher.ViewMatchers.assertThat
-import androidx.test.filters.LargeTest
 import com.madonasyombua.sportsdb.data.local.SportDB
 import com.madonasyombua.sportsdb.data.local.SportDao
 import com.madonasyombua.sportsdb.data.local.SportsEntity
@@ -18,8 +16,9 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 import org.robolectric.RuntimeEnvironment
+import org.robolectric.annotation.Config
+
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.O_MR1])
