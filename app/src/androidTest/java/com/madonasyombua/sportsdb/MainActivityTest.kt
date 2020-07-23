@@ -2,6 +2,7 @@ package com.madonasyombua.sportsdb
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import com.madonasyombua.sportsdb.ui.MainActivity
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
