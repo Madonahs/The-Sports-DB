@@ -2,13 +2,19 @@ package com.madonasyombua.sportsdb
 
 import android.app.Application
 import androidx.databinding.library.BuildConfig
+import com.madonasyombua.sportsdb.helpers.CrashTree
 import timber.log.Timber
 
-class App : Application() {
+open class App : Application() {
     override fun onCreate() {
         super.onCreate()
-        //plant Timber for logging only on debug mode
-        if (BuildConfig.DEBUG)
+        setTimberConfiguration()
+    }
+
+    protected open fun setTimberConfiguration(){
+        if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
+        }
+        Timber.plant(CrashTree())
     }
 }
