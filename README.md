@@ -10,16 +10,13 @@
 Just a personal project playing with the free [SportsDB](https://www.thesportsdb.com/api.php?ref=apilist.fun)
 
 
-
-## Draft User Interface Mock
-![UI](https://user-images.githubusercontent.com/11560987/79800423-2b819880-832a-11ea-9bbd-1e247048ccd4.png)
-
-
 ## Screen 1 & 2: 
   <img src="https://user-images.githubusercontent.com/11560987/79799448-77cbd900-8328-11ea-9ffa-53851a2365a9.jpg" width="280"/> <img src="https://user-images.githubusercontent.com/11560987/79799462-7ac6c980-8328-11ea-8f19-f34b43edfd5b.jpg" width="280"/> 
 
 
 
+## Draft User Interface Mock
+![UI](https://user-images.githubusercontent.com/11560987/79800423-2b819880-832a-11ea-9bbd-1e247048ccd4.png)
 
 
 ## License
