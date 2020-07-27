@@ -1,4 +1,4 @@
-package com.madonasyombua.sportsdb
+package com.madonasyombua.sportsdb.uitests
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest

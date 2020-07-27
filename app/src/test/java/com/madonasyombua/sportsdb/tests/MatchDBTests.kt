@@ -1,6 +1,5 @@
-package com.madonasyombua.sportsdb
+package com.madonasyombua.sportsdb.tests
 
-import android.os.Build
 import androidx.room.Room
 import com.madonasyombua.sportsdb.model.dao.MatchDao
 import com.madonasyombua.sportsdb.model.database.SportDB

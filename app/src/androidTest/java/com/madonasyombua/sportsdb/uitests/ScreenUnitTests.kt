@@ -1,8 +1,9 @@
-package com.madonasyombua.sportsdb
+package com.madonasyombua.sportsdb.uitests
 
 import android.app.Activity
 import android.support.test.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
+import com.madonasyombua.sportsdb.App
 
 class ScreenUnitTests<T : Activity>(
         activityClass: Class<T>,

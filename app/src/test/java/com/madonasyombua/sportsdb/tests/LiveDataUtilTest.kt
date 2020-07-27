@@ -1,4 +1,4 @@
-package com.madonasyombua.sportsdb
+package com.madonasyombua.sportsdb.tests
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
