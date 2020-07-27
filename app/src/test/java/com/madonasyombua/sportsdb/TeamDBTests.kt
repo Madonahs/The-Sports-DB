@@ -2,11 +2,10 @@ package com.madonasyombua.sportsdb
 
 import android.os.Build
 import androidx.room.Room
-import com.madonasyombua.sportsdb.data.local.SportDB
-import com.madonasyombua.sportsdb.data.local.SportDao
-import com.madonasyombua.sportsdb.data.local.SportsEntity
+import com.madonasyombua.sportsdb.model.database.SportDB
+import com.madonasyombua.sportsdb.model.dao.TeamDao
+import com.madonasyombua.sportsdb.model.entities.TeamEntity
 import junit.framework.Assert.assertEquals
-import org.hamcrest.CoreMatchers.`is`
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -15,13 +14,12 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 
-
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.O_MR1])
-class SportsDBTests {
-    private var sportDao: SportDao?= null
+class TeamDBTests {
+    private var teamDao: TeamDao?= null
     private var sportsDataBase: SportDB? = null
-    private var sportsEntity : SportsEntity?= null
+    private var teamEntity : TeamEntity?= null
 
     @Before
     fun databaseCreated() {
@@ -32,37 +30,37 @@ class SportsDBTests {
         sportsDataBase = Room.inMemoryDatabaseBuilder(RuntimeEnvironment.systemContext, SportDB::class.java) //this is just allowed here for testing
                 .allowMainThreadQueries()
                 .build()
-       sportsEntity = SportsEntity(1, "Arsenal", "Premier League","Image")
+       teamEntity = TeamEntity(1,"18888", "Arsenal", "Premier League","Image")
     }
 
     @Test
     @Throws(Exception::class)
     fun insertItemsInTheDB() {
-        sportsEntity?.let { sportsDataBase?.getSportsDao()?.insertSportsData(it) }
-        assertEquals("Arsenal", sportsDataBase?.getSportsDao()?.getAllSports()?.get(0)?.strTeam)
+        teamEntity?.let { sportsDataBase?.getTeamsDao()?.insertSportsData(it) }
+        assertEquals("Arsenal", sportsDataBase?.getTeamsDao()?.getAllSports()?.get(0)?.strTeam)
     }
 
     @Test
     @Throws(Exception::class)
     fun deleteItemsFromTheDB() {
-        sportsEntity?.let { sportsDataBase?.getSportsDao()?.insertSportsData(it) }
-        sportsEntity?.let { sportsDataBase?.getSportsDao()?.deleteSportsData(it) }
-        assertEquals(0, sportsDataBase?.getSportsDao()?.getAllSports()?.size)
+        teamEntity?.let { sportsDataBase?.getTeamsDao()?.insertSportsData(it) }
+        teamEntity?.let { sportsDataBase?.getTeamsDao()?.deleteSportsData(it) }
+        assertEquals(0, sportsDataBase?.getTeamsDao()?.getAllSports()?.size)
     }
 
     @Test
     @Throws(Exception::class)
     fun testOnConflict(){
-        sportsEntity?.let { sportsDataBase?.getSportsDao()?.insertSportsData(it)}
-        sportsEntity?.let { sportsDataBase?.getSportsDao()?.insertSportsData(it)}
-        assertEquals(1, sportsDataBase?.getSportsDao()?.getAllSports()?.size)
+        teamEntity?.let { sportsDataBase?.getTeamsDao()?.insertSportsData(it)}
+        teamEntity?.let { sportsDataBase?.getTeamsDao()?.insertSportsData(it)}
+        assertEquals(1, sportsDataBase?.getTeamsDao()?.getAllSports()?.size)
     }
 
     @Test
     @Throws(Exception::class)
     fun deleteAllSportsData(){
-        if(sportsDataBase?.getSportsDao()?.getAllSports()?.isNotEmpty()!!){
-            sportsEntity?.let { sportsDataBase?.getSportsDao()?.deleteSportsData(it) }
+        if(sportsDataBase?.getTeamsDao()?.getAllSports()?.isNotEmpty()!!){
+            teamEntity?.let { sportsDataBase?.getTeamsDao()?.deleteSportsData(it) }
         }
     }
 
