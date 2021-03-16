@@ -8,15 +8,16 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.madonasyombua.sportsdb.ui.screen.TeamScreen
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent{
-           MaterialTheme {
-            MyApp()
-           }
+        setContent {
+            MaterialTheme {
+                MyApp()
+            }
         }
 
     }
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
-
+        TeamScreen()
     }
 }
 
