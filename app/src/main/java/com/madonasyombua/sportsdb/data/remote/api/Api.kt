@@ -1,7 +1,8 @@
-package com.madonasyombua.sportsdb.model.api
+package com.madonasyombua.sportsdb.data.remote.api
 
-import com.madonasyombua.sportsdb.model.response.MatchBaseResponse
-import com.madonasyombua.sportsdb.model.response.SportsBaseResponse
+import com.madonasyombua.sportsdb.data.remote.response.LeagueResponse
+import com.madonasyombua.sportsdb.data.remote.response.MatchBaseResponse
+import com.madonasyombua.sportsdb.data.remote.response.SportsBaseResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -19,5 +20,8 @@ interface Api {
 
     @GET("eventslast.php")
     fun getAllLastEvents(@Query("id") teamId : String) : Single<MatchBaseResponse>
+
+    @GET("all_leagues.php")
+    fun getAllLeagues():Single<LeagueResponse>
 
 }

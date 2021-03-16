@@ -2,9 +2,9 @@ package com.madonasyombua.sportsdb.tests
 
 import android.os.Build
 import androidx.room.Room
-import com.madonasyombua.sportsdb.model.database.SportDB
-import com.madonasyombua.sportsdb.model.dao.TeamDao
-import com.madonasyombua.sportsdb.model.entities.TeamEntity
+import com.madonasyombua.sportsdb.data.local.database.SportDB
+import com.madonasyombua.sportsdb.data.local.dao.TeamDao
+import com.madonasyombua.sportsdb.data.local.entities.TeamEntity
 import junit.framework.Assert.assertEquals
 import org.junit.After
 import org.junit.Before

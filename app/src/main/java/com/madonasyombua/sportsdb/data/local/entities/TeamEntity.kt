@@ -1,4 +1,4 @@
-package com.madonasyombua.sportsdb.model.entities
+package com.madonasyombua.sportsdb.data.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

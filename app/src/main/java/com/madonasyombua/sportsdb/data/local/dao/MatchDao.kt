@@ -1,4 +1,4 @@
-package com.madonasyombua.sportsdb.model.dao
+package com.madonasyombua.sportsdb.data.local.dao
 
 import androidx.room.Delete
 import androidx.room.Dao
@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.madonasyombua.sportsdb.model.entities.MatchEntity
+import com.madonasyombua.sportsdb.data.local.entities.MatchEntity
 
 
 @Dao
