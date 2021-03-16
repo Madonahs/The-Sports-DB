@@ -2,21 +2,23 @@ package com.madonasyombua.sportsdb.model.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 @Entity
+@JsonClass(generateAdapter = true)
 data class MatchEntity(
         @PrimaryKey(autoGenerate = true)
         var id : Long = 0,
-        @SerializedName(league) var leagues : String? = null,
-        @SerializedName(eventDate) var date : String?= null,
-        @SerializedName(time) var gameTime : String?=null,
-        @SerializedName(homeTeam) var teamHome : String?= null,
-        @SerializedName(guestTeam) var awayTeam : String?= null,
-        @SerializedName(homeScore) var scoreHome : String?= null,
-        @SerializedName(guestSore) var scoreGuest: String? = null,
-        @SerializedName(homeTeamId) var homeIdTeam : String? = null,
-        @SerializedName(awayTeamId) var awayIdTeam : String? = null
+        @Json(name = league) var leagues : String? = null,
+        @Json(name = eventDate) var date : String?= null,
+        @Json(name = time) var gameTime : String?=null,
+        @Json(name = homeTeam) var teamHome : String?= null,
+        @Json(name = guestTeam) var awayTeam : String?= null,
+        @Json(name = homeScore) var scoreHome : String?= null,
+        @Json(name = guestSore) var scoreGuest: String? = null,
+        @Json(name = homeTeamId) var homeIdTeam : String? = null,
+        @Json(name = awayTeamId) var awayIdTeam : String? = null
 
 ){
     companion object {
