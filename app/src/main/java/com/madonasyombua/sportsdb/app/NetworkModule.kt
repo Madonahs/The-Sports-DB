@@ -1,5 +1,6 @@
 package com.madonasyombua.sportsdb.app
 
+import com.madonasyombua.sportsdb.BuildConfig
 import com.madonasyombua.sportsdb.data.remote.api.Api
 import dagger.Module
 import dagger.Provides
@@ -20,10 +21,11 @@ class NetworkModule {
     fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(
-                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+                    HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             )
             .build()
     }
+
 
     @Provides
     @Singleton

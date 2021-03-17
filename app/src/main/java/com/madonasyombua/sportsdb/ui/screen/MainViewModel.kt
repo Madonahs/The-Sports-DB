@@ -1,9 +1,6 @@
 package com.madonasyombua.sportsdb.ui.screen
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.madonasyombua.sportsdb.data.Repository
 import com.madonasyombua.sportsdb.data.remote.model.League
 import com.madonasyombua.sportsdb.data.remote.response.LeagueResponse
@@ -13,6 +10,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
@@ -21,7 +21,11 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
     private val _leaguesLiveData = MutableLiveData<List<League>>()
    private val disposable = CompositeDisposable()
-    val leaguesLiveData: LiveData<List<League>> = _leaguesLiveData
+
+    private val _selectedLeagueLiveData = MutableLiveData<League?>(null)
+    private val     _state  = MutableLiveData<LeagueViewState>()
+    val state:LiveData<LeagueViewState>
+    get() = _state
 
     init {
         fetchLeagues()
@@ -38,12 +42,25 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
                     }
 
                     override fun onSuccess(response: LeagueResponse) {
-                        _leaguesLiveData.postValue(response.leagues)
-                    }
+                        _leaguesLiveData.value = response.leagues
+                        viewModelScope.launch {
+                        combine(
+                            _leaguesLiveData.asFlow().onEach {leagues->
 
+                            if (leagues.isNotEmpty() && _selectedLeagueLiveData.value == null){
+                                _selectedLeagueLiveData.value = leagues[0]
+
+                            }
+                        },
+                            _selectedLeagueLiveData.asFlow()
+                        ){leagues,selectedLeague->
+                            LeagueViewState(leagues,selectedLeague)
+                        }.collect { _state.value = it }
+                        }
+                        }
                     override fun onError(error: Throwable) {
                         Timber.e(error)
-                    }
+                              }
 
                 })
     }
@@ -52,5 +69,12 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
         super.onCleared()
         disposable.clear()
     }
+    fun onLeagueSelected(league: League) {
+        _selectedLeagueLiveData.value = league
+    }
 
+    data class LeagueViewState(
+        val leagues: List<League> = emptyList(),
+        val selectedLeague: League? = null
+    )
 }
