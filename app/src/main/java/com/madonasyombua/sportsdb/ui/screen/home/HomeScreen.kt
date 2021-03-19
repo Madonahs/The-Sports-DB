@@ -1,7 +1,6 @@
-package com.madonasyombua.sportsdb.ui.screen
+package com.madonasyombua.sportsdb.ui.screen.home
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.*
 import com.madonasyombua.sportsdb.R
 import androidx.compose.material.icons.Icons
@@ -12,24 +11,19 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.madonasyombua.sportsdb.data.remote.model.League
+import com.madonasyombua.sportsdb.ui.screen.LeagueTab
 import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
-import timber.log.Timber
 
 @Composable
-fun TeamScreen(viewModel: MainViewModel) {
+fun HomeScreen(viewModel: HomeViewModel) {
                     val leaguesState = viewModel.state.observeAsState()
                       val selected = leaguesState.value?.selectedLeague
 
                     Scaffold(topBar = {
                         AppBar()
                     },modifier = Modifier.background(color = Color.White)) {
-
-                            Timber.d("syre $it")
                         leaguesState.value?.leagues?.let {leagues->
                             selected?.let {
-                                Timber.d("statee $leagues")
                                 LeagueTab(
                                     leagues = leagues.take(20),
                                     selectedLeague = it,

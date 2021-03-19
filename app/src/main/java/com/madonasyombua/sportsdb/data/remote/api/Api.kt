@@ -3,6 +3,7 @@ package com.madonasyombua.sportsdb.data.remote.api
 import com.madonasyombua.sportsdb.data.remote.response.LeagueResponse
 import com.madonasyombua.sportsdb.data.remote.response.MatchBaseResponse
 import com.madonasyombua.sportsdb.data.remote.response.SportsBaseResponse
+import com.madonasyombua.sportsdb.data.remote.response.TeamsResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -23,5 +24,8 @@ interface Api {
 
     @GET("all_leagues.php")
     fun getAllLeagues():Single<LeagueResponse>
+
+    @GET("search_all_teams.php")
+    fun getAllTeamsInALeague(@Query("l")league:String):Single<TeamsResponse>
 
 }

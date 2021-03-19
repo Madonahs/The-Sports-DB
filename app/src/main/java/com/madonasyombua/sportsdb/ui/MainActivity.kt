@@ -8,13 +8,13 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.madonasyombua.sportsdb.ui.screen.MainViewModel
-import com.madonasyombua.sportsdb.ui.screen.TeamScreen
+import com.madonasyombua.sportsdb.ui.screen.home.HomeViewModel
+import com.madonasyombua.sportsdb.ui.screen.home.HomeScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 }
 
 @Composable
-fun MyApp(viewModel: MainViewModel) {
-    TeamScreen(viewModel)
+fun MyApp(viewModel: HomeViewModel) {
+    HomeScreen(viewModel)
 
 }
 

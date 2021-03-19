@@ -16,6 +16,7 @@ fun LeagueTab(leagues:List<League>,selectedLeague:League,onLeagueSelected:(Leagu
         ScrollableTabRow(
             divider = {},
             selectedTabIndex = selectedIndex,
+            edgePadding =8.dp,
             backgroundColor = Color.White,
             contentColor = mediumSeaGreen) {
             leagues.forEachIndexed { index, league ->
