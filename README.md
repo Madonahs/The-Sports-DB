@@ -10,8 +10,18 @@
 Just a personal project playing with the free [SportsDB](https://www.thesportsdb.com/api.php?ref=apilist.fun)
 
 
-## Screen 1 & 2: 
-  <img src="/screenshots/home.png" width="280"/> <img src="https://user-images.githubusercontent.com/11560987/79799462-7ac6c980-8328-11ea-8f19-f34b43edfd5b.jpg" width="280"/>
+## Screen 1 & 2:
+<table>
+  <tr>
+    <td>
+      <img src="/screenshots/home.png" width="280"/>
+    </td>
+      <img src="https://user-images.githubusercontent.com/11560987/79799462-7ac6c980-8328-11ea-8f19-f34b43edfd5b.jpg" width="280"/>
+    <td>
+    </td>
+  </tr>
+</table>
+
 
 
 
