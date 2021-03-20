@@ -9,6 +9,10 @@ import androidx.compose.ui.unit.dp
 import com.madonasyombua.sportsdb.data.remote.model.League
 import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
 
+/**
+ * Created by Loveth Nwokike
+ * on 3/17/2021
+ * */
 @Composable
 fun LeagueTab(leagues:List<League>,selectedLeague:League,onLeagueSelected:(League)->Unit){
 

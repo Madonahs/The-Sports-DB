@@ -1,6 +1,5 @@
 package com.madonasyombua.sportsdb.app
 
-import com.madonasyombua.sportsdb.BuildConfig
 import com.madonasyombua.sportsdb.data.remote.api.Api
 import dagger.Module
 import dagger.Provides
@@ -13,6 +12,10 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
+/**
+ * Created by Loveth Nwokike
+ * on 3/15/2021
+ * */
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {

@@ -17,6 +17,10 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * Created by Loveth Nwokike
+ * on 3/15/2021
+ * */
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
     private val _leaguesLiveData = MutableLiveData<List<League>>()
