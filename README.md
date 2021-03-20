@@ -11,7 +11,7 @@ Just a personal project playing with the free [SportsDB](https://www.thesportsdb
 
 
 ## Screen 1 & 2: 
-  <img src="https://user-images.githubusercontent.com/11560987/79799448-77cbd900-8328-11ea-9ffa-53851a2365a9.jpg" width="280"/> <img src="https://user-images.githubusercontent.com/11560987/79799462-7ac6c980-8328-11ea-8f19-f34b43edfd5b.jpg" width="280"/> 
+  <img src="/screenshots/home.png" width="280"/> <img src="https://user-images.githubusercontent.com/11560987/79799462-7ac6c980-8328-11ea-8f19-f34b43edfd5b.jpg" width="280"/>
 
 
 
