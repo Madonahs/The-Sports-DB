@@ -5,10 +5,8 @@
       
 </p>
 
-
 # The Sports DB
-Just a personal project playing with the free [SportsDB](https://www.thesportsdb.com/api.php?ref=apilist.fun)
-
+Just a personal project playing with the free [SportsDB](https://www.thesportsdb.com/api.php?ref=apilist.fun) using JetpackCompose
 
 ## Screen 1 & 2:
 <table>
@@ -21,9 +19,6 @@ Just a personal project playing with the free [SportsDB](https://www.thesportsdb
     </td>
   </tr>
 </table>
-
-
-
 
 ## Draft User Interface Mock
 ![UI](https://user-images.githubusercontent.com/11560987/79800423-2b819880-832a-11ea-9bbd-1e247048ccd4.png)
