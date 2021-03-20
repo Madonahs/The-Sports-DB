@@ -5,15 +5,20 @@
       
 </p>
 
-
 # The Sports DB
-Just a personal project playing with the free [SportsDB](https://www.thesportsdb.com/api.php?ref=apilist.fun)
+Just a personal project playing with the free [SportsDB](https://www.thesportsdb.com/api.php?ref=apilist.fun) using JetpackCompose
 
-
-## Screen 1 & 2: 
-  <img src="https://user-images.githubusercontent.com/11560987/79799448-77cbd900-8328-11ea-9ffa-53851a2365a9.jpg" width="280"/> <img src="https://user-images.githubusercontent.com/11560987/79799462-7ac6c980-8328-11ea-8f19-f34b43edfd5b.jpg" width="280"/> 
-
-
+## Screen 1 & 2:
+<table>
+  <tr>
+    <td>
+      <img src="/screenshots/home.png" width="280"/>
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/11560987/79799462-7ac6c980-8328-11ea-8f19-f34b43edfd5b.jpg" width="280"/>
+    </td>
+  </tr>
+</table>
 
 ## Draft User Interface Mock
 ![UI](https://user-images.githubusercontent.com/11560987/79800423-2b819880-832a-11ea-9bbd-1e247048ccd4.png)

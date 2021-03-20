@@ -1,20 +1,22 @@
-package com.madonasyombua.sportsdb.model.entities
+package com.madonasyombua.sportsdb.data.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * This is the team entity
  */
 @Entity
+@JsonClass(generateAdapter = true)
 data class TeamEntity (
         @PrimaryKey(autoGenerate = true)
         var id: Long = 0,
-        @SerializedName(teamId) var idTeam : String? = null,
-        @SerializedName(teamName) var strTeam: String? = null,
-        @SerializedName(league) var strLeague : String? = null,
-        @SerializedName( teamBadge) var strTeamBadge : String? = null
+        @Json(name = teamId) var idTeam : String? = null,
+        @Json(name = teamName) var strTeam: String? = null,
+        @Json(name = league) var strLeague : String? = null,
+        @Json(name = teamBadge) var strTeamBadge : String? = null
 ){
         companion object{
                 private const val teamId = "idTeam"

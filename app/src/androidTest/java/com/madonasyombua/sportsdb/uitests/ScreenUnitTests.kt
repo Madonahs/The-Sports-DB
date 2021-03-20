@@ -3,7 +3,7 @@ package com.madonasyombua.sportsdb.uitests
 import android.app.Activity
 import android.support.test.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
-import com.madonasyombua.sportsdb.App
+import com.madonasyombua.sportsdb.app.App
 
 class ScreenUnitTests<T : Activity>(
         activityClass: Class<T>,

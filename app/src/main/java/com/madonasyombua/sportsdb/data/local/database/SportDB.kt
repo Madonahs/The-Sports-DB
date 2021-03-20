@@ -1,11 +1,11 @@
-package com.madonasyombua.sportsdb.model.database
+package com.madonasyombua.sportsdb.data.local.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.madonasyombua.sportsdb.model.dao.MatchDao
-import com.madonasyombua.sportsdb.model.dao.TeamDao
-import com.madonasyombua.sportsdb.model.entities.MatchEntity
-import com.madonasyombua.sportsdb.model.entities.TeamEntity
+import com.madonasyombua.sportsdb.data.local.dao.MatchDao
+import com.madonasyombua.sportsdb.data.local.dao.TeamDao
+import com.madonasyombua.sportsdb.data.local.entities.MatchEntity
+import com.madonasyombua.sportsdb.data.local.entities.TeamEntity
 
 /**
  * This is the database class

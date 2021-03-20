@@ -1,6 +1,6 @@
-package com.madonasyombua.sportsdb.model.response
+package com.madonasyombua.sportsdb.data.remote.response
 
-import com.madonasyombua.sportsdb.model.entities.TeamEntity
+import com.madonasyombua.sportsdb.data.local.entities.TeamEntity
 
 data class SportsBaseResponse(val sportList : List<TeamEntity>){
     //check when empty
