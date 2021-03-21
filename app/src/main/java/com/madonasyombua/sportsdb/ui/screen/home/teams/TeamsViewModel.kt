@@ -1,4 +1,4 @@
-package com.madonasyombua.sportsdb.ui.screen.teams
+package com.madonasyombua.sportsdb.ui.screen.home.teams
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

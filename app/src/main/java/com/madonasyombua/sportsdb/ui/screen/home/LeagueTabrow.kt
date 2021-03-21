@@ -1,4 +1,4 @@
-package com.madonasyombua.sportsdb.ui.screen
+package com.madonasyombua.sportsdb.ui.screen.home
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*

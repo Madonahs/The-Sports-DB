@@ -20,8 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.madonasyombua.sportsdb.ui.screen.LeagueTab
-import com.madonasyombua.sportsdb.ui.screen.teams.TeamsDisplayGrid
+import com.madonasyombua.sportsdb.ui.screen.home.teams.TeamsDisplayGrid
 import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
 
 /**

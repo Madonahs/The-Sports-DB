@@ -1,4 +1,4 @@
-package com.madonasyombua.sportsdb.ui.screen.teams
+package com.madonasyombua.sportsdb.ui.screen.home.teams
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
