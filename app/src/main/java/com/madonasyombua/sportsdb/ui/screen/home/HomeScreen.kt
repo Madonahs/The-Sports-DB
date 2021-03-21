@@ -5,8 +5,8 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import com.madonasyombua.sportsdb.R
 import androidx.compose.material.icons.Icons
@@ -17,10 +17,10 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.madonasyombua.sportsdb.ui.screen.LeagueTab
-import com.madonasyombua.sportsdb.ui.screen.teams.TeamsDisplayGrid
-import com.madonasyombua.sportsdb.ui.screen.teams.TeamsViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.madonasyombua.sportsdb.ui.screen.home.teams.TeamsDisplayGrid
 import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
 
 /**
@@ -29,7 +29,8 @@ import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
  * */
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen(viewModel: HomeViewModel,teamsViewModel: TeamsViewModel) {
+fun HomeScreen() {
+     val viewModel: HomeViewModel = viewModel()
                     val leaguesState = viewModel.state.observeAsState()
                       val selected = leaguesState.value?.selectedLeague
 
@@ -47,9 +48,10 @@ fun HomeScreen(viewModel: HomeViewModel,teamsViewModel: TeamsViewModel) {
 
                                     Spacer(modifier = Modifier.height(10.dp))
 
-                                    Crossfade(targetState = selected) {
-                                        teamsViewModel.getTeamsByLeague(it.name)
-                                        TeamsDisplayGrid(viewModel = teamsViewModel)
+                                    Crossfade(targetState = selected, modifier = Modifier
+                                        .fillMaxWidth()
+                                        .weight(1f)) {
+                                        TeamsDisplayGrid(it)
                                     }
                                 }
 
@@ -79,4 +81,13 @@ fun AppBar() {
                 }
             }
         })
+}
+
+@ExperimentalFoundationApi
+@Preview("Light Theme", widthDp = 360, heightDp = 640)
+@Composable
+fun LightPreview() {
+    MaterialTheme {
+        HomeScreen()
+    }
 }
