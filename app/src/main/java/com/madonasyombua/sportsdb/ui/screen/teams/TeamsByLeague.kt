@@ -16,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.madonasyombua.sportsdb.data.remote.model.League
 import com.madonasyombua.sportsdb.data.remote.model.TeamByLeague
 import dev.chrisbanes.accompanist.coil.CoilImage
 
@@ -25,28 +27,38 @@ import dev.chrisbanes.accompanist.coil.CoilImage
  * */
 @ExperimentalFoundationApi
 @Composable
-fun TeamsDisplayGrid(viewModel: TeamsViewModel){
-    val teams = viewModel.teamsLiveData.observeAsState()
-    LazyVerticalGrid(cells = GridCells.Fixed(3), modifier = Modifier.padding(10.dp),
-        state = rememberLazyListState()) {
-             items(teams.value ?: emptyList()) {
-                 team->
-                 TeamGridItem(team = team)
-             }
-    
-}
+fun TeamsDisplayGrid(league: League) {
+    val teamsViewModel: TeamsViewModel = viewModel()
+    val teams = teamsViewModel.teamsLiveData.observeAsState()
+    LazyVerticalGrid(
+        cells = GridCells.Fixed(3), modifier = Modifier.padding(10.dp),
+        state = rememberLazyListState()
+    ) {
+        teamsViewModel.getTeamsByLeague(league.name)
+
+        items(teams.value ?: emptyList()) { team ->
+            TeamGridItem(team = team)
+        }
+
+    }
 }
 
 @Composable
-fun TeamGridItem(team: TeamByLeague){
-Card(modifier = Modifier
-    .fillMaxWidth()
-    .fillMaxHeight()
-    .clip(shape = RoundedCornerShape(6.dp)).padding(10.dp)) {
-    Column(modifier = Modifier.padding(8.dp),horizontalAlignment = Alignment.CenterHorizontally) {
-      CoilImage(data = team.badgeUrl,contentDescription = null)
-        Text(text =team.teamName,textAlign = TextAlign.Center)
+fun TeamGridItem(team: TeamByLeague) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .clip(shape = RoundedCornerShape(6.dp))
+            .padding(10.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            CoilImage(data = team.badgeUrl, contentDescription = null)
+            Text(text = team.teamName, textAlign = TextAlign.Center)
+        }
     }
-}
 
 }
