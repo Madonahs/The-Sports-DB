@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Sports</string>
     <string name="cd_search">Search</string>
+    <string name="event">LastEvents</string>
+    <string name="equip">Equipments</string>
+    <string name="table">LeagueTable</string>
 
 </resources>

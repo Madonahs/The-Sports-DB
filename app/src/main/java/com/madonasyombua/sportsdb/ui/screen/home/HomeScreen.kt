@@ -19,7 +19,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltNavGraphViewModel
+import androidx.navigation.NavController
 import com.madonasyombua.sportsdb.ui.screen.home.teams.TeamsDisplayGrid
 import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
 
@@ -29,8 +30,8 @@ import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
  * */
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen() {
-     val viewModel: HomeViewModel = viewModel()
+fun HomeScreen(navController: NavController) {
+     val viewModel: HomeViewModel = hiltNavGraphViewModel()
                     val leaguesState = viewModel.state.observeAsState()
                       val selected = leaguesState.value?.selectedLeague
 
@@ -51,7 +52,7 @@ fun HomeScreen() {
                                     Crossfade(targetState = selected, modifier = Modifier
                                         .fillMaxWidth()
                                         .weight(1f)) {
-                                        TeamsDisplayGrid(it)
+                                        TeamsDisplayGrid(it,navController)
                                     }
                                 }
 
@@ -88,6 +89,6 @@ fun AppBar() {
 @Composable
 fun LightPreview() {
     MaterialTheme {
-        HomeScreen()
+        AppBar()
     }
 }
