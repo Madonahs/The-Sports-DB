@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.*
 import com.madonasyombua.sportsdb.R
+import com.madonasyombua.sportsdb.ui.components.AppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
@@ -64,8 +65,7 @@ fun HomeScreen(navController: NavController) {
 
 
 @Composable
-fun HomeAppBar() {
-  com.madonasyombua.sportsdb.ui.components.AppBar(title = "Sports App",actions =  {
+fun HomeAppBar() { AppBar(title = "Sports App",actions =  {
       CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
           IconButton(
               onClick = { TODO("") }
@@ -77,7 +77,7 @@ fun HomeAppBar() {
               )
           }
       }
-  })
+  },color = mediumSeaGreen)
 }
 
 @ExperimentalFoundationApi

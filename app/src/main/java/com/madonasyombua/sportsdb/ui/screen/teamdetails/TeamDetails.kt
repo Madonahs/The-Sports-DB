@@ -5,21 +5,22 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.*
+import com.madonasyombua.sportsdb.ui.components.AppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Event
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.TableChart
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.*
 import com.madonasyombua.sportsdb.R
-import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
+import com.madonasyombua.sportsdb.ui.theme.seaGreen
 import dev.chrisbanes.accompanist.coil.CoilImage
 
 /**
@@ -36,13 +37,13 @@ sealed class Screen(val route: String, @StringRes val resourceId: Int, val icon:
 @Composable
 fun TeamDetailsScreen(url:String) {
     val navController = rememberNavController()
-    Scaffold(topBar= { com.madonasyombua.sportsdb.ui.components.AppBar(title = "",actions =
+    Scaffold(topBar= { AppBar(title = "",actions =
     {
         Row(modifier = Modifier.fillMaxWidth(),horizontalArrangement = Arrangement.Center) {
             CoilImage(data = url, contentDescription = "null")
         }
 
-    })}, bottomBar =
+    },color = seaGreen)}, bottomBar =
     { TeamBottomNavigation(navController) }) {
         NavHost(navController, startDestination = Screen.Event.route) {
             composable(Screen.Event.route) { TeamEventsScreen() }
@@ -61,7 +62,7 @@ fun TeamBottomNavigation(navController:NavController) {
         Screen.Table
     )
     BottomNavigation(
-        backgroundColor =  mediumSeaGreen
+        backgroundColor =  seaGreen
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.arguments?.getString(KEY_ROUTE)
@@ -73,6 +74,8 @@ fun TeamBottomNavigation(navController:NavController) {
                     launchSingleTop = true
                 }
                 },
+                selectedContentColor = Color.White,
+                unselectedContentColor= Color.Black,
                 label = { Text(text = stringResource(id = screen.resourceId)) },
                 icon = { Icon(imageVector = screen.icon, contentDescription = null) })
         }

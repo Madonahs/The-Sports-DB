@@ -6,28 +6,30 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Event(
     @Json(name="idEvent")
-    val eventId:String,
+    val eventId:String = "",
     @Json(name="strEvent")
-    val twoTeamName:String,
+    val twoTeamName:String = "",
     @Json(name="idLeague")
-    val leagueId:String,
+    val leagueId:String = "",
     @Json(name="strLeague")
-    val leagueName:String,
+    val leagueName:String = "",
     @Json(name="strSeason")
-    val season:String,
+    val season:String = "",
     @Json(name="strHomeTeam")
-    val homeTeam:String,
+    val homeTeam:String = "",
     @Json(name="strAwayTeam")
-    val awayTeam:String,
+    val awayTeam:String = "",
     @Json(name="intHomeScore")
-    val homeScore:String,
+    val homeScore:String = "",
     @Json(name="intAwayScore")
-    val awayScore:String,
+    val awayScore:String = "",
     @Json(name="idHomeTeam")
-    val homeTeamId:String,
+    val homeTeamId:String = "",
     @Json(name="idAwayTeam")
-    val awayTeamId:String,
+    val awayTeamId:String ="",
     @Json(name="strVideo")
-    val videoUrl:String
+    val videoUrl:String = "",
+    @Json(name = "dateEvent")
+    val eventDate:String
 
 )
