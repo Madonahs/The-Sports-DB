@@ -28,4 +28,13 @@ interface Api {
     @GET("search_all_teams.php")
     fun getAllTeamsInALeague(@Query("l")league:String):Single<TeamsResponse>
 
+    @GET("")
+    fun getEventsByTeamID()
+
+    @GET("")
+    fun getEquipmentsBYTeam()
+
+    @GET("  ")
+    fun getLeagueTable()
+
 }

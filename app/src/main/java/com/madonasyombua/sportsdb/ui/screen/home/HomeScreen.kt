@@ -36,7 +36,7 @@ fun HomeScreen(navController: NavController) {
                       val selected = leaguesState.value?.selectedLeague
 
                     Scaffold(topBar = {
-                        AppBar()
+                        HomeAppBar()
                     },modifier = Modifier.background(color = Color.White)) {
                         leaguesState.value?.leagues?.let {leagues->
                             selected?.let {
@@ -64,24 +64,20 @@ fun HomeScreen(navController: NavController) {
 
 
 @Composable
-fun AppBar() {
-    TopAppBar(title = {
-        Text(text = "Sports App", color = Color.White)
-    },
-                backgroundColor = mediumSeaGreen,
-        actions = {
-            CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
-                IconButton(
-                    onClick = { /* TODO: Open search */ }
-                ) {
-                    Icon(
-                        imageVector = Icons.Filled.Search,
-                        contentDescription = stringResource(R.string.cd_search),
-                        tint = Color.White
-                    )
-                }
-            }
-        })
+fun HomeAppBar() {
+  com.madonasyombua.sportsdb.ui.components.AppBar(title = "Sports App",actions =  {
+      CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
+          IconButton(
+              onClick = { TODO("") }
+          ) {
+              Icon(
+                  imageVector = Icons.Filled.Search,
+                  contentDescription = stringResource(R.string.cd_search),
+                  tint = Color.White
+              )
+          }
+      }
+  })
 }
 
 @ExperimentalFoundationApi
@@ -89,6 +85,6 @@ fun AppBar() {
 @Composable
 fun LightPreview() {
     MaterialTheme {
-        AppBar()
+        HomeAppBar()
     }
 }

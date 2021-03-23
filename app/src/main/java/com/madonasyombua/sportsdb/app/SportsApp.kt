@@ -17,7 +17,8 @@ fun TheSportsApp() {
     val navController = rememberNavController()
     NavHost(navController, startDestination = "home") {
         composable("home") { HomeScreen(navController = navController) }
-        composable("teamdetails") { TeamDetailsScreen() }
+        composable("teamdetails/{url}") {entry->
+            TeamDetailsScreen(entry.arguments?.getString("url")!!) }
     }
 }
 
