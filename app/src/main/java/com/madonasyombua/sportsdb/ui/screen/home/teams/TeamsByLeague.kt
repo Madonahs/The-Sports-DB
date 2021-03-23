@@ -55,7 +55,7 @@ fun TeamGridItem(team: TeamByLeague, navController: NavController) {
             .clip(shape = RoundedCornerShape(6.dp))
             .padding(10.dp)
             .clickable(onClick = {
-                navController.navigate("teamdetails/${team.badgeUrl}")
+                navController.navigate("teamdetails/${team.teamId}")
             })
     ) {
         Column(

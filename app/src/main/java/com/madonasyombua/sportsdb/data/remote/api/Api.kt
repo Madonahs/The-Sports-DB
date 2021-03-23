@@ -36,4 +36,6 @@ interface Api {
     fun getLeagueTable(@Query("l") leagueId: String, @Query("s") season: String):
             Observable<LeagueTableResponse>
 
+    @GET("lookupteam.php")
+    fun getTeamDetailsById(@Query("id")teamId:String):Single<TeamsResponse>
 }

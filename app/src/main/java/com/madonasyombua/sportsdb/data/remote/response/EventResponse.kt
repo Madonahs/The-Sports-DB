@@ -5,5 +5,5 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter=true)
 data class EventResponse(
-    val equipment:List<Event>
+    val results:List<Event>
 )

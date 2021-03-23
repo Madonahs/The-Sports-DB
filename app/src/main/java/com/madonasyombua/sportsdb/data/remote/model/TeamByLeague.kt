@@ -9,6 +9,8 @@ import com.squareup.moshi.JsonClass
  * */
 @JsonClass(generateAdapter=true)
 data class TeamByLeague(
+    @Json(name="idTeam")
+    val teamId:String,
     @Json(name="strTeam")
     val teamName:String,
     @Json(name="strTeamBadge")

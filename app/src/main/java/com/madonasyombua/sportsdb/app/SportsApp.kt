@@ -9,7 +9,6 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import com.madonasyombua.sportsdb.ui.screen.home.HomeScreen
 import com.madonasyombua.sportsdb.ui.screen.teamdetails.TeamDetailsScreen
-import com.madonasyombua.sportsdb.ui.screen.teamdetails.TeamEventsScreen
 
 @ExperimentalFoundationApi
 @Composable
@@ -17,8 +16,8 @@ fun TheSportsApp() {
     val navController = rememberNavController()
     NavHost(navController, startDestination = "home") {
         composable("home") { HomeScreen(navController = navController) }
-        composable("teamdetails/{url}") {entry->
-            entry.arguments?.getString("url")?.let {
+        composable("teamdetails/{id}") {entry->
+            entry.arguments?.getString("id")?.let {
                 TeamDetailsScreen(it)
             }
              }

@@ -1,4 +1,4 @@
-package com.madonasyombua.sportsdb.ui.screen.teamdetails
+package com.madonasyombua.sportsdb.ui.screen.teamdetails.event
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -17,26 +18,29 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltNavGraphViewModel
 import com.madonasyombua.sportsdb.data.remote.model.Event
 import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
 import com.madonasyombua.sportsdb.ui.theme.seaGreen
 
+/**
+ * Created by Loveth Nwokike
+ * 3/23/2021
+ * */
 @Composable
-fun TeamEventsScreen() {
-    val events = listOf<Event>(
-        Event(
-            leagueName = "Premier League",
-            homeTeam = "Arsenal",
-            awayTeam = "Chelsea",
-            homeScore = "4",
-            awayScore = "1",
-            eventDate = "2021-03-10"
+fun TeamEventsScreen(viewModel: TeamEventViewModel) {
+
+    val events = viewModel.eventsViewModel.observeAsState()
+    LazyColumn(modifier = Modifier
+        .background(
+            color =
+            Color(0xeeecf1)
         )
-    )
-    LazyColumn(modifier = Modifier.background(color =
-    Color(0xeeecf1)).fillMaxHeight()) {
-        items(events) {
-            EventsCardItem(event = it)
+        .fillMaxHeight()) {
+        events.value?.let {
+            items(it) {
+                EventsCardItem(event = it)
+            }
         }
     }
 
@@ -107,5 +111,5 @@ fun EventsCardItem(event: Event) {
 @Preview
 @Composable
 fun EventPreview() {
-    TeamEventsScreen()
+    //TeamEventsScreen()
 }

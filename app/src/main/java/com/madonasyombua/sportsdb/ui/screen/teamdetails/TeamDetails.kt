@@ -1,9 +1,7 @@
 package com.madonasyombua.sportsdb.ui.screen.teamdetails
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import com.madonasyombua.sportsdb.ui.components.AppBar
 import androidx.compose.runtime.Composable
@@ -12,14 +10,19 @@ import androidx.compose.material.icons.outlined.Event
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.TableChart
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltNavGraphViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.*
+import androidx.navigation.compose.NavHost
 import com.madonasyombua.sportsdb.R
+import com.madonasyombua.sportsdb.ui.screen.teamdetails.event.TeamEventViewModel
+import com.madonasyombua.sportsdb.ui.screen.teamdetails.event.TeamEventsScreen
 import com.madonasyombua.sportsdb.ui.theme.seaGreen
 import dev.chrisbanes.accompanist.coil.CoilImage
 
@@ -35,21 +38,27 @@ sealed class Screen(val route: String, @StringRes val resourceId: Int, val icon:
 
 
 @Composable
-fun TeamDetailsScreen(url:String) {
+fun TeamDetailsScreen(id:String) {
+    val viewModel : TeamEventViewModel = hiltNavGraphViewModel()
+    viewModel.getTeamDetails(id)
+    val teamDetails = viewModel.teamDetailsLiveData.observeAsState()
     val navController = rememberNavController()
     Scaffold(topBar= { AppBar(title = "",actions =
     {
         Row(modifier = Modifier.fillMaxWidth(),horizontalArrangement = Arrangement.Center) {
-            CoilImage(data = url, contentDescription = "null")
+            teamDetails.value?.get(0)?.badgeUrl?.let { CoilImage(data = it, contentDescription = "null") }
         }
 
     },color = seaGreen)}, bottomBar =
     { TeamBottomNavigation(navController) }) {
+        Box(modifier = Modifier.padding(it)){
         NavHost(navController, startDestination = Screen.Event.route) {
-            composable(Screen.Event.route) { TeamEventsScreen() }
+            composable(Screen.Event.route) { TeamEventsScreen(viewModel)
+                viewModel.getLastTeamEvents(id)
+            }
             composable(Screen.Equipment.route) {  }
             composable(Screen.Table.route){}
-        }
+        }}
     }
 }
 
@@ -85,6 +94,6 @@ fun TeamBottomNavigation(navController:NavController) {
 @Composable
 fun LightPreview() {
     MaterialTheme {
-        TeamDetailsScreen("")
+        //TeamDetailsScreen("")
     }
 }
