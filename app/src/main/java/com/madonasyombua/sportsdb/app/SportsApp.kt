@@ -18,7 +18,10 @@ fun TheSportsApp() {
     NavHost(navController, startDestination = "home") {
         composable("home") { HomeScreen(navController = navController) }
         composable("teamdetails/{url}") {entry->
-            TeamDetailsScreen(entry.arguments?.getString("url")!!) }
+            entry.arguments?.getString("url")?.let {
+                TeamDetailsScreen(it)
+            }
+             }
     }
 }
 
