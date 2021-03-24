@@ -34,6 +34,7 @@ data class Event(
     @Json(name="strVideo")
     val videoUrl:String = "",
     @Json(name = "dateEvent")
-    val eventDate:String
+    val eventDate:String,
+    var badge:String=""
 
 )

@@ -9,8 +9,6 @@ import com.madonasyombua.sportsdb.data.remote.model.TeamByLeague
 import com.madonasyombua.sportsdb.data.remote.response.EventResponse
 import com.madonasyombua.sportsdb.data.remote.response.TeamsResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.reactivex.Observable
-import io.reactivex.ObservableSource
 import io.reactivex.Observer
 import io.reactivex.SingleObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -23,11 +21,13 @@ import javax.inject.Inject
 @HiltViewModel
 class TeamEventViewModel  @Inject constructor(private val repository: Repository):ViewModel(){
 
-    private val _eventsViewModel = MutableLiveData<List<Event>>()
+    private val _eventsLiveData = MutableLiveData<List<Event>>()
     private val _teamDetailLiveData = MutableLiveData<List<TeamByLeague>>()
-    val eventsViewModel: LiveData<List<Event>>
-    get() = _eventsViewModel
-
+    private val _teamAwayDetailLiveData = MutableLiveData<List<TeamByLeague>>()
+    val eventsLiveData: LiveData<List<Event>>
+    get() = _eventsLiveData
+    val teamAwayDetailsLiveData:LiveData<List<TeamByLeague>>
+        get() = _teamAwayDetailLiveData
     val teamDetailsLiveData:LiveData<List<TeamByLeague>>
     get() = _teamDetailLiveData
     private val disposable = CompositeDisposable()
@@ -43,7 +43,7 @@ class TeamEventViewModel  @Inject constructor(private val repository: Repository
                 }
 
                 override fun onNext(t: EventResponse) {
-                    _eventsViewModel.postValue(t.results)
+                    _eventsLiveData.postValue(t.results)
                 }
 
                 override fun onError(e: Throwable) {
@@ -55,7 +55,7 @@ class TeamEventViewModel  @Inject constructor(private val repository: Repository
             })
 }
 
-          fun getTeamDetails(teamId: String){
+          fun getHomeTeamDetails(teamId: String){
               repository.getTeamDetails(teamId).doOnSubscribe {
 
               }.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
@@ -73,6 +73,25 @@ class TeamEventViewModel  @Inject constructor(private val repository: Repository
                       }
                   })
           }
+
+    fun getAwayTeamDetails(teamId: String){
+        repository.getTeamDetails(teamId).doOnSubscribe {
+
+        }.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object :SingleObserver<TeamsResponse>{
+                override fun onSubscribe(d: Disposable) {
+                    disposable.add(d)
+                }
+
+                override fun onSuccess(t: TeamsResponse) {
+                    _teamAwayDetailLiveData.postValue(t.teams)
+                }
+
+                override fun onError(e: Throwable) {
+                    Timber.e(e)
+                }
+            })
+    }
 
 
 }

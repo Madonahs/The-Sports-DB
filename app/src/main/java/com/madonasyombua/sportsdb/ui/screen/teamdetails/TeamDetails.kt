@@ -40,7 +40,7 @@ sealed class Screen(val route: String, @StringRes val resourceId: Int, val icon:
 @Composable
 fun TeamDetailsScreen(id:String) {
     val viewModel : TeamEventViewModel = hiltNavGraphViewModel()
-    viewModel.getTeamDetails(id)
+    viewModel.getHomeTeamDetails(id)
     val teamDetails = viewModel.teamDetailsLiveData.observeAsState()
     val navController = rememberNavController()
     Scaffold(topBar= { AppBar(title = "",actions =
