@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.madonasyombua.sportsdb.data.remote.model.League
-import com.madonasyombua.sportsdb.ui.theme.mediumSeaGreen
+import com.madonasyombua.sportsdb.ui.theme.Green700
 
 /**
  * Created by Loveth Nwokike
@@ -22,7 +22,7 @@ fun LeagueTab(leagues:List<League>,selectedLeague:League,onLeagueSelected:(Leagu
             selectedTabIndex = selectedIndex,
             edgePadding =8.dp,
             backgroundColor = Color.White,
-            contentColor = mediumSeaGreen) {
+            contentColor = Green700) {
             leagues.forEachIndexed { index, league ->
                 Tab(
                     selected = index == selectedIndex,
@@ -47,7 +47,7 @@ private fun LeagueChoice(
     Surface(
         shape = MaterialTheme.shapes.small,
         modifier = modifier,
-        color = mediumSeaGreen
+        color = Green700
     ) {
         Text(
             text = text,

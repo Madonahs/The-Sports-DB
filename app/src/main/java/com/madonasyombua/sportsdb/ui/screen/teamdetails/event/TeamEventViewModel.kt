@@ -18,28 +18,33 @@ import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * Created by Loveth Nwokike
+ * 3/23/2021
+ * */
 @HiltViewModel
-class TeamEventViewModel  @Inject constructor(private val repository: Repository):ViewModel(){
+class TeamEventViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
 
     private val _eventsLiveData = MutableLiveData<List<Event>>()
     private val _teamDetailLiveData = MutableLiveData<List<TeamByLeague>>()
     private val _teamAwayDetailLiveData = MutableLiveData<List<TeamByLeague>>()
+
     val eventsLiveData: LiveData<List<Event>>
-    get() = _eventsLiveData
-    val teamAwayDetailsLiveData:LiveData<List<TeamByLeague>>
+        get() = _eventsLiveData
+    val teamAwayDetailsLiveData: LiveData<List<TeamByLeague>>
         get() = _teamAwayDetailLiveData
-    val teamDetailsLiveData:LiveData<List<TeamByLeague>>
-    get() = _teamDetailLiveData
+    val teamDetailsLiveData: LiveData<List<TeamByLeague>>
+        get() = _teamDetailLiveData
     private val disposable = CompositeDisposable()
 
 
-    fun getLastTeamEvents(teamId:String){
+    fun getLastTeamEvents(teamId: String) {
         repository.getTeamLastFiveEvents(teamId).doOnSubscribe {
 
         }.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-            .subscribe (object : Observer<EventResponse>{
+            .subscribe(object : Observer<EventResponse> {
                 override fun onSubscribe(d: Disposable) {
-                   disposable.add(d)
+                    disposable.add(d)
                 }
 
                 override fun onNext(t: EventResponse) {
@@ -53,32 +58,32 @@ class TeamEventViewModel  @Inject constructor(private val repository: Repository
                 override fun onComplete() {
                 }
             })
-}
+    }
 
-          fun getHomeTeamDetails(teamId: String){
-              repository.getTeamDetails(teamId).doOnSubscribe {
-
-              }.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-                  .subscribe(object :SingleObserver<TeamsResponse>{
-                      override fun onSubscribe(d: Disposable) {
-                          disposable.add(d)
-                      }
-
-                      override fun onSuccess(t: TeamsResponse) {
-                          _teamDetailLiveData.postValue(t.teams)
-                      }
-
-                      override fun onError(e: Throwable) {
-                          Timber.e(e)
-                      }
-                  })
-          }
-
-    fun getAwayTeamDetails(teamId: String){
+    fun getHomeTeamDetails(teamId: String) {
         repository.getTeamDetails(teamId).doOnSubscribe {
 
         }.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object :SingleObserver<TeamsResponse>{
+            .subscribe(object : SingleObserver<TeamsResponse> {
+                override fun onSubscribe(d: Disposable) {
+                    disposable.add(d)
+                }
+
+                override fun onSuccess(t: TeamsResponse) {
+                    _teamDetailLiveData.postValue(t.teams)
+                }
+
+                override fun onError(e: Throwable) {
+                    Timber.e(e)
+                }
+            })
+    }
+
+    fun getAwayTeamDetails(teamId: String) {
+        repository.getTeamDetails(teamId).doOnSubscribe {
+
+        }.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : SingleObserver<TeamsResponse> {
                 override fun onSubscribe(d: Disposable) {
                     disposable.add(d)
                 }
@@ -93,5 +98,8 @@ class TeamEventViewModel  @Inject constructor(private val repository: Repository
             })
     }
 
-
+    override fun onCleared() {
+        super.onCleared()
+        disposable.clear()
+    }
 }

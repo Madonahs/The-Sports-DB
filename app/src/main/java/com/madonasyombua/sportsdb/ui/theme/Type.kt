@@ -1,2 +1,69 @@
 package com.madonasyombua.sportsdb.ui.theme
 
+import androidx.compose.material.Typography
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.sp
+import com.madonasyombua.sportsdb.R
+
+
+private val Montserrat = FontFamily(
+    Font(R.font.montserrat_regular),
+    Font(R.font.montserrat_medium, FontWeight.W500),
+    Font(R.font.montserrat_semibold, FontWeight.W600)
+)
+
+val SportsAppTypography = Typography(
+    h4 = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.W600,
+        fontSize = 30.sp,
+        textAlign = TextAlign.Center
+    ),
+    h5 = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.W600,
+        textAlign = TextAlign.Center,
+        fontSize = 24.sp
+    ),
+    h6 = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.W600,
+        textAlign = TextAlign.Center,
+        fontSize = 20.sp
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.W600,
+        textAlign = TextAlign.Center,
+        fontSize = 16.sp
+    ),
+    subtitle2 = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.W500,
+        textAlign = TextAlign.Center,
+        fontSize = 14.sp
+    ),
+    body2 = TextStyle(
+        fontFamily = Montserrat,
+        fontSize = 14.sp
+    ),
+    button = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.W500,
+        fontSize = 14.sp
+    ),
+    caption = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp
+    ),
+    overline = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.W500,
+        fontSize = 12.sp
+    )
+)

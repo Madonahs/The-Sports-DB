@@ -23,7 +23,7 @@ import androidx.navigation.compose.NavHost
 import com.madonasyombua.sportsdb.R
 import com.madonasyombua.sportsdb.ui.screen.teamdetails.event.TeamEventViewModel
 import com.madonasyombua.sportsdb.ui.screen.teamdetails.event.TeamEventsScreen
-import com.madonasyombua.sportsdb.ui.theme.seaGreen
+import com.madonasyombua.sportsdb.ui.theme.Green800
 import dev.chrisbanes.accompanist.coil.CoilImage
 
 /**
@@ -49,7 +49,7 @@ fun TeamDetailsScreen(id:String) {
             teamDetails.value?.get(0)?.badgeUrl?.let { CoilImage(data = it, contentDescription = "null") }
         }
 
-    },color = seaGreen)}, bottomBar =
+    })}, bottomBar =
     { TeamBottomNavigation(navController) }) {
         Box(modifier = Modifier.padding(it)){
         NavHost(navController, startDestination = Screen.Event.route) {
@@ -71,7 +71,7 @@ fun TeamBottomNavigation(navController:NavController) {
         Screen.Table
     )
     BottomNavigation(
-        backgroundColor =  seaGreen
+        backgroundColor =  Green800
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.arguments?.getString(KEY_ROUTE)

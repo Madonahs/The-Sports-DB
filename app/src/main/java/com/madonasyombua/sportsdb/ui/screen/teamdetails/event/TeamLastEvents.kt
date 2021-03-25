@@ -3,7 +3,6 @@ package com.madonasyombua.sportsdb.ui.screen.teamdetails.event
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -16,12 +15,11 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.madonasyombua.sportsdb.data.remote.model.Event
-import com.madonasyombua.sportsdb.ui.theme.seaGreen
+import com.madonasyombua.sportsdb.ui.theme.Green800
 import dev.chrisbanes.accompanist.coil.CoilImage
 import timber.log.Timber
 
@@ -31,7 +29,6 @@ import timber.log.Timber
  * */
 @Composable
 fun TeamEventsScreen(viewModel: TeamEventViewModel) {
-val es = mutableListOf<Event>()
     val events = viewModel.eventsLiveData.observeAsState()
     LazyColumn(
         modifier = Modifier
@@ -65,7 +62,7 @@ fun EventsCardItem(event: Event, viewModel: TeamEventViewModel) {
         ) {
             Box(
                 contentAlignment = Alignment.Center, modifier = Modifier
-                    .background(color = seaGreen)
+                    .background(color = Green800)
                     .padding(top = 8.dp, bottom = 8.dp)
                     .fillMaxWidth()
             ) {
@@ -94,26 +91,16 @@ fun EventsCardItem(event: Event, viewModel: TeamEventViewModel) {
 
                 Text(
                     text = event.homeTeam,
-                    fontWeight = FontWeight.W500,
-                    fontSize = 18.sp,
                     modifier = Modifier.width(70.dp),
-                    textAlign = TextAlign.Center
                 )
                 Text(
                     text = "  ${event.homeScore}  -  ",
-                    fontWeight = FontWeight.W500,
-                    fontSize = 18.sp, textAlign = TextAlign.Justify
                 )
                 Text(
                     text = event.awayScore.plus("  "),
-                    fontWeight = FontWeight.W500,
-                    fontSize = 18.sp, textAlign = TextAlign.Justify
                 )
                 Text(
                     text = event.awayTeam,
-                    fontWeight = FontWeight.W500,
-                    fontSize = 18.sp,
-                    textAlign = TextAlign.Center,
                     modifier = Modifier.width(80.dp)
                 )
 
@@ -133,10 +120,6 @@ fun EventsCardItem(event: Event, viewModel: TeamEventViewModel) {
 
             Text(
                 text = event.eventDate,
-                fontStyle = FontStyle.Italic,
-                fontSize = 18.sp,
-                textAlign = TextAlign.Center,
-                fontFamily = FontFamily.Monospace,
                 color = Color.Gray
             )
 

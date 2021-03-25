@@ -63,7 +63,7 @@ fun TeamGridItem(team: TeamByLeague, navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CoilImage(data = team.badgeUrl, contentDescription = null)
-            Text(text = team.teamName, textAlign = TextAlign.Center)
+            Text(text = team.teamName)
         }
     }
 
