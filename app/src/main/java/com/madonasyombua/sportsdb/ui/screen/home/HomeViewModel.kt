@@ -41,15 +41,17 @@ class HomeViewModel @Inject constructor(private val repository: Repository) : Vi
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : SingleObserver<LeagueResponse> {
                 override fun onSubscribe(d: Disposable) {
-                    disposable.add(d) }
+                    disposable.add(d)
+                }
+
                 override fun onSuccess(response: LeagueResponse) {
                     _leaguesLiveData.value = response.leagues
                     viewModelScope.launch {
                         combine(
-                            _leaguesLiveData.asFlow().onEach {
-                                    leagues -> if (leagues.isNotEmpty() && _selectedLeagueLiveData.value == null) {
+                            _leaguesLiveData.asFlow().onEach { leagues ->
+                                if (leagues.isNotEmpty() && _selectedLeagueLiveData.value == null) {
                                     _selectedLeagueLiveData.value = leagues[0]
-                            }
+                                }
                             },
                             _selectedLeagueLiveData.asFlow()
                         ) { leagues, selectedLeague ->

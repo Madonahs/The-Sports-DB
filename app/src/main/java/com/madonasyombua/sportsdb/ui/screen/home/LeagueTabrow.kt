@@ -1,6 +1,6 @@
 package com.madonasyombua.sportsdb.ui.screen.home
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,26 +14,27 @@ import com.madonasyombua.sportsdb.ui.theme.Green700
  * on 3/17/2021
  * */
 @Composable
-fun LeagueTab(leagues:List<League>,selectedLeague:League,onLeagueSelected:(League)->Unit){
+fun LeagueTab(leagues: List<League>, selectedLeague: League, onLeagueSelected: (League) -> Unit) {
 
     val selectedIndex = leagues.indexOfFirst { it == selectedLeague }
-        ScrollableTabRow(
-            divider = {},
-            selectedTabIndex = selectedIndex,
-            edgePadding =8.dp,
-            backgroundColor = Color.White,
-            contentColor = Green700) {
-            leagues.forEachIndexed { index, league ->
-                Tab(
+    ScrollableTabRow(
+        divider = {},
+        selectedTabIndex = selectedIndex,
+        edgePadding = 8.dp,
+        backgroundColor = Color.White,
+        contentColor = Green700
+    ) {
+        leagues.forEachIndexed { index, league ->
+            Tab(
+                selected = index == selectedIndex,
+                onClick = { onLeagueSelected(league) },
+            ) {
+                LeagueChoice(
+                    text = league.name,
                     selected = index == selectedIndex,
-                    onClick = { onLeagueSelected(league)},
-                      ) {
-                    LeagueChoice(
-                        text = league.name,
-                        selected = index == selectedIndex,
-                        modifier = Modifier.padding(horizontal = 4.dp, vertical = 16.dp)
-                    )
-                }
+                    modifier = Modifier.padding(horizontal = 4.dp, vertical = 16.dp)
+                )
+            }
         }
     }
 }
@@ -53,7 +54,7 @@ private fun LeagueChoice(
             text = text,
             style = MaterialTheme.typography.body2,
             color = Color.Black,
-            modifier = Modifier.padding(start = 8.dp, end = 8.dp,top = 8.dp,bottom = 8.dp)
+            modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp, bottom = 8.dp)
         )
     }
 }

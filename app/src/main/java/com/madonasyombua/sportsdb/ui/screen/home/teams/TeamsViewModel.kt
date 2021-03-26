@@ -20,20 +20,20 @@ import javax.inject.Inject
  * on 3/20/2021
  * */
 @HiltViewModel
-class TeamsViewModel @Inject constructor(private val repository: Repository):ViewModel() {
+class TeamsViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
 
     private val _teamsLiveData = MutableLiveData<List<TeamByLeague>>()
-    val teamsLiveData:LiveData<List<TeamByLeague>>
+    val teamsLiveData: LiveData<List<TeamByLeague>>
         get() = _teamsLiveData
 
     private val disposable = CompositeDisposable()
 
-    fun getTeamsByLeague(league:String){
+    fun getTeamsByLeague(league: String) {
         repository.getAllTeamsByLeague(league = league)
-            .doOnSubscribe {  }
+            .doOnSubscribe { }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object : SingleObserver<TeamsResponse>{
+            .subscribe(object : SingleObserver<TeamsResponse> {
                 override fun onSubscribe(d: Disposable) {
                     disposable.add(d)
                 }

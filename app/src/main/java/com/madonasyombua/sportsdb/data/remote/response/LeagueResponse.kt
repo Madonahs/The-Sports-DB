@@ -9,5 +9,5 @@ import com.squareup.moshi.JsonClass
  * */
 @JsonClass(generateAdapter = true)
 data class LeagueResponse(
-val leagues:List<League>
+    val leagues: List<League>
 )

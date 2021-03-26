@@ -2,7 +2,10 @@ package com.madonasyombua.sportsdb.ui.screen.home.teams
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
@@ -16,8 +19,6 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltNavGraphViewModel
 import androidx.navigation.NavController
@@ -65,7 +66,7 @@ fun TeamGridItem(team: TeamByLeague, navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CoilImage(data = team.badgeUrl, contentDescription = null)
-            Text(text = team.teamName,style = MaterialTheme.typography.subtitle1)
+            Text(text = team.teamName, style = MaterialTheme.typography.subtitle1)
         }
     }
 

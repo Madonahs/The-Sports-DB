@@ -12,13 +12,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.madonasyombua.sportsdb.data.remote.model.Event
 import com.madonasyombua.sportsdb.ui.theme.Green800
 import dev.chrisbanes.accompanist.coil.CoilImage
@@ -39,15 +34,14 @@ fun TeamEventsScreen(viewModel: TeamEventViewModel) {
             )
             .fillMaxHeight()
     ) {
-        events.value?.let {events->
+        events.value?.let { events ->
             items(events.size) { index ->
-                    EventsCardItem(event = events[index], viewModel)
+                EventsCardItem(event = events[index], viewModel)
 
-            }}
+            }
+        }
     }
-
 }
-
 
 @Composable
 fun EventsCardItem(event: Event, viewModel: TeamEventViewModel) {
@@ -67,7 +61,7 @@ fun EventsCardItem(event: Event, viewModel: TeamEventViewModel) {
                     .padding(top = 8.dp, bottom = 8.dp)
                     .fillMaxWidth()
             ) {
-                Text(text = event.leagueName,color = Color.White )
+                Text(text = event.leagueName, color = Color.White)
             }
 
 
@@ -86,7 +80,7 @@ fun EventsCardItem(event: Event, viewModel: TeamEventViewModel) {
                         modifier = Modifier
                             .width(40.dp)
                             .height(40.dp)
-                            .padding(end = 4.dp, bottom = 8.dp),contentScale = ContentScale.Crop
+                            .padding(end = 4.dp, bottom = 8.dp), contentScale = ContentScale.Crop
                     )
                 }
 
@@ -102,8 +96,7 @@ fun EventsCardItem(event: Event, viewModel: TeamEventViewModel) {
                     text = event.awayScore.plus("  ")
                 )
                 Text(
-                    text = event.awayTeam
-                    ,style = MaterialTheme.typography.subtitle1,
+                    text = event.awayTeam, style = MaterialTheme.typography.subtitle1,
                     modifier = Modifier.width(80.dp)
                 )
 
@@ -112,10 +105,12 @@ fun EventsCardItem(event: Event, viewModel: TeamEventViewModel) {
                     Timber.e(event.homeTeamId)
                     if (it.teamId == event.awayTeamId)
                         event.badge = it.badgeUrl
-                       CoilImage(data = event.badge ,contentDescription = null,  modifier = Modifier
-                        .width(40.dp)
-                        .height(40.dp)
-                        .padding(start = 4.dp, bottom = 8.dp),contentScale = ContentScale.Crop)
+                    CoilImage(
+                        data = event.badge, contentDescription = null, modifier = Modifier
+                            .width(40.dp)
+                            .height(40.dp)
+                            .padding(start = 4.dp, bottom = 8.dp), contentScale = ContentScale.Crop
+                    )
 
 
                 }

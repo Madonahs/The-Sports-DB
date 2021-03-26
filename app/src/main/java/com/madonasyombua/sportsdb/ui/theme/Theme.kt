@@ -7,7 +7,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
- val LightColors = lightColors(
+val LightColors = lightColors(
     primary = Green700,
     primaryVariant = Green900,
     onPrimary = Color.White,
@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.Color
     error = Green800,
 )
 
- val DarkColors = darkColors(
+val DarkColors = darkColors(
     primary = Green300,
     primaryVariant = Green700,
     onPrimary = Color.Black,
@@ -28,10 +28,11 @@ import androidx.compose.ui.graphics.Color
 
 
 @Composable
-fun SportsAppTheme(darkTheme: Boolean= isSystemInDarkTheme(), content:@Composable ()->Unit){
+fun SportsAppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     MaterialTheme(
         content = content,
         colors = if (darkTheme) DarkColors else LightColors,
-        typography = SportsAppTypography)
+        typography = SportsAppTypography
+    )
 }
 

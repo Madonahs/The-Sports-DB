@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
-
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import com.madonasyombua.sportsdb.app.TheSportsApp
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity() {
                     Timber.d("theme ${darkTheme.value}")
                 }
             }
-
         }
     }
 }

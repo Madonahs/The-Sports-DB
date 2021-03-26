@@ -1,21 +1,15 @@
 package com.madonasyombua.sportsdb.data.local.dao
 
-import androidx.room.Delete
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.madonasyombua.sportsdb.data.local.entities.MatchEntity
-
 
 @Dao
 interface MatchDao {
     @Query("SELECT * FROM matchentity")
-    fun getAllMatches() : List<MatchEntity>
+    fun getAllMatches(): List<MatchEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertMatchData(sportEntity : MatchEntity)
+    fun insertMatchData(sportEntity: MatchEntity)
 
     @Delete
     fun deleteMatchData(sportEntity: MatchEntity)

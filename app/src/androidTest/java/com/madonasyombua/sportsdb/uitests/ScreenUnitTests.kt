@@ -6,9 +6,9 @@ import androidx.test.rule.ActivityTestRule
 import com.madonasyombua.sportsdb.app.App
 
 class ScreenUnitTests<T : Activity>(
-        activityClass: Class<T>,
-        private val navigateToScreen: T.() -> Unit,
-        private val setupMocks: () -> Unit = {}
+    activityClass: Class<T>,
+    private val navigateToScreen: T.() -> Unit,
+    private val setupMocks: () -> Unit = {}
 ) : ActivityTestRule<T>(activityClass) {
     @ExperimentalStdlibApi
     override fun beforeActivityLaunched() {

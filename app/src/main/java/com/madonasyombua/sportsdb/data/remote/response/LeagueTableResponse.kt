@@ -5,5 +5,5 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class LeagueTableResponse(
-    val table:List<LeagueTable>
+    val table: List<LeagueTable>
 )
