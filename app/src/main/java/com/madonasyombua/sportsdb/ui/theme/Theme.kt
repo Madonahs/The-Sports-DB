@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.Color
     error = Green800,
 )
 
-private val DarkColors = darkColors(
+ val DarkColors = darkColors(
     primary = Green300,
     primaryVariant = Green700,
     onPrimary = Color.Black,
@@ -28,7 +28,7 @@ private val DarkColors = darkColors(
 
 
 @Composable
-fun SportsAppTheme(darkTheme: Boolean, content:@Composable ()->Unit){
+fun SportsAppTheme(darkTheme: Boolean= isSystemInDarkTheme(), content:@Composable ()->Unit){
     MaterialTheme(
         content = content,
         colors = if (darkTheme) DarkColors else LightColors,

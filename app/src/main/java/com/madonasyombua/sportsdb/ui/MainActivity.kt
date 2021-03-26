@@ -4,25 +4,29 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.material.MaterialTheme
-import androidx.compose.ui.platform.LocalContext
-import com.madonasyombua.sportsdb.app.App
+
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import com.madonasyombua.sportsdb.app.TheSportsApp
 import com.madonasyombua.sportsdb.ui.theme.SportsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    @Inject
-    lateinit var app:App
+
     @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            SportsAppTheme(darkTheme = app.isDark.value) {
-                TheSportsApp(app)
+            val darkTheme = remember { mutableStateOf(false) }
+            SportsAppTheme(darkTheme = darkTheme.value) {
+                TheSportsApp {
+                    darkTheme.value = !darkTheme.value
+                    Timber.d("theme ${darkTheme.value}")
+                }
             }
+
         }
     }
 }

@@ -12,10 +12,10 @@ import com.madonasyombua.sportsdb.ui.screen.teamdetails.TeamDetailsScreen
 
 @ExperimentalFoundationApi
 @Composable
-fun TheSportsApp(app: App) {
+fun TheSportsApp(toggle:()->Unit) {
     val navController = rememberNavController()
     NavHost(navController, startDestination = "home") {
-        composable("home") { HomeScreen(navController = navController,app) }
+        composable("home") { HomeScreen(navController = navController,toggle) }
         composable("teamdetails/{id}") {entry->
             entry.arguments?.getString("id")?.let {
                 TeamDetailsScreen(it)

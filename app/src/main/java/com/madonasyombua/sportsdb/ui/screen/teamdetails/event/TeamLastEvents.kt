@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
@@ -91,16 +92,18 @@ fun EventsCardItem(event: Event, viewModel: TeamEventViewModel) {
 
                 Text(
                     text = event.homeTeam,
+                    style = MaterialTheme.typography.subtitle1,
                     modifier = Modifier.width(70.dp),
                 )
                 Text(
                     text = "  ${event.homeScore}  -  ",
                 )
                 Text(
-                    text = event.awayScore.plus("  "),
+                    text = event.awayScore.plus("  ")
                 )
                 Text(
-                    text = event.awayTeam,
+                    text = event.awayTeam
+                    ,style = MaterialTheme.typography.subtitle1,
                     modifier = Modifier.width(80.dp)
                 )
 

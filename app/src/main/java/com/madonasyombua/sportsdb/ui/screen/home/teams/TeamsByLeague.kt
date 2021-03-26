@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
@@ -63,7 +64,7 @@ fun TeamGridItem(team: TeamByLeague, navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CoilImage(data = team.badgeUrl, contentDescription = null)
-            Text(text = team.teamName)
+            Text(text = team.teamName,style = MaterialTheme.typography.subtitle1)
         }
     }
 

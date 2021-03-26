@@ -43,14 +43,14 @@ import com.madonasyombua.sportsdb.ui.theme.SportsAppTheme
  * */
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen(navController: NavController,app:App) {
+fun HomeScreen(navController: NavController,toogle: () -> Unit) {
     val viewModel: HomeViewModel = hiltNavGraphViewModel()
     val leaguesState = viewModel.state.observeAsState()
     val selected = leaguesState.value?.selectedLeague
 
 
     Scaffold(topBar = {
-        HomeAppBar(app)
+        HomeAppBar(toogle)
     }) {
         leaguesState.value?.leagues?.let { leagues ->
             selected?.let {
@@ -79,14 +79,14 @@ fun HomeScreen(navController: NavController,app:App) {
 
 
 @Composable
-fun HomeAppBar(app: App) {
+fun HomeAppBar(toogle:()->Unit) {
     AppBar(title = "Sports App", actions = {
 
         CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
             IconButton(
-                onClick = {
-                    app.toggleTheme()
-                }
+                onClick = toogle
+
+
             ) {
                 Icon(
                     imageVector = Icons.Outlined.DarkMode,

@@ -94,6 +94,6 @@ fun TeamBottomNavigation(navController:NavController) {
 @Composable
 fun LightPreview() {
     MaterialTheme {
-        //TeamDetailsScreen("")
+        TeamDetailsScreen("")
     }
 }
