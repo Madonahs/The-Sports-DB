@@ -5,11 +5,13 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 
 /**
  * Created by Loveth Nwokike
  * 3/22/2021
  * */
+
 @Composable
 fun AppBar(title: String, actions: @Composable RowScope.() -> Unit = {}) {
     TopAppBar(

@@ -16,6 +16,7 @@ import javax.inject.Singleton
  * Created by Loveth Nwokike
  * on 3/15/2021
  * */
+
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {

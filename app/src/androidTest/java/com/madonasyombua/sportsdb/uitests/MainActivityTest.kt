@@ -20,21 +20,5 @@ class MainActivityTest {
             activityClass = MainActivity::class.java,
             navigateToScreen = {}
     )
-    @Before
-    @Throws(Exception::class)
-    fun intentsInit(){
-
-    }
-
-    @Test
-    fun testMain(){
-
-    }
-
-    @After
-    @Throws(Exception::class)
-    fun intentsTeardown() {
-
-    }
 
 }
