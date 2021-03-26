@@ -1,6 +1,7 @@
 package com.madonasyombua.sportsdb.ui.screen.home.teams
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
@@ -8,6 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
@@ -16,7 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltNavGraphViewModel
+import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
 import com.madonasyombua.sportsdb.data.remote.model.League
 import com.madonasyombua.sportsdb.data.remote.model.TeamByLeague
 import dev.chrisbanes.accompanist.coil.CoilImage
@@ -27,8 +31,8 @@ import dev.chrisbanes.accompanist.coil.CoilImage
  * */
 @ExperimentalFoundationApi
 @Composable
-fun TeamsDisplayGrid(league: League) {
-    val teamsViewModel: TeamsViewModel = viewModel()
+fun TeamsDisplayGrid(league: League, navController: NavController) {
+    val teamsViewModel: TeamsViewModel = hiltNavGraphViewModel()
     val teams = teamsViewModel.teamsLiveData.observeAsState()
     LazyVerticalGrid(
         cells = GridCells.Fixed(3), modifier = Modifier.padding(10.dp),
@@ -37,27 +41,30 @@ fun TeamsDisplayGrid(league: League) {
         teamsViewModel.getTeamsByLeague(league.name)
 
         items(teams.value ?: emptyList()) { team ->
-            TeamGridItem(team = team)
+            TeamGridItem(team = team, navController = navController)
         }
 
     }
 }
 
 @Composable
-fun TeamGridItem(team: TeamByLeague) {
+fun TeamGridItem(team: TeamByLeague, navController: NavController) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
             .clip(shape = RoundedCornerShape(6.dp))
             .padding(10.dp)
+            .clickable(onClick = {
+                navController.navigate("teamdetails/${team.teamId}")
+            })
     ) {
         Column(
             modifier = Modifier.padding(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             CoilImage(data = team.badgeUrl, contentDescription = null)
-            Text(text = team.teamName, textAlign = TextAlign.Center)
+            Text(text = team.teamName,style = MaterialTheme.typography.subtitle1)
         }
     }
 

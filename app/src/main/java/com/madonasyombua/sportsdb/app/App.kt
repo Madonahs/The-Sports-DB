@@ -7,12 +7,13 @@ import timber.log.Timber
 
 @HiltAndroidApp
 open class App : Application() {
+
     override fun onCreate() {
         super.onCreate()
         setTimberConfiguration()
     }
 
-    protected open fun setTimberConfiguration(){
+    protected open fun setTimberConfiguration() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }

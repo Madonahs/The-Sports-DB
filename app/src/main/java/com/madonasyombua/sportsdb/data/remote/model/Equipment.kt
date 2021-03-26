@@ -5,14 +5,17 @@ import com.squareup.moshi.JsonClass
 
 /**
  * Created by Loveth Nwokike
- * on 3/17/2021
+ * 3/23/2021
  * */
 @JsonClass(generateAdapter=true)
-data class TeamByLeague(
+data class Equipment(
+    @Json(name = "idEquipment")
+    val equipmentId:String,
     @Json(name="idTeam")
     val teamId:String,
-    @Json(name="strTeam")
-    val teamName:String,
-    @Json(name="strTeamBadge")
-    val badgeUrl:String
+    val date:String,
+    @Json(name="strSeason")
+    val season:String,
+    @Json(name="strEquipment")
+    val equipmentUrl:String
 )
