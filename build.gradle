@@ -9,12 +9,10 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        maven {
-            url "https://kotlin.bintray.com/kotlinx"
-        }
+
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0-alpha10'
+        classpath 'com.android.tools.build:gradle:7.0.0-alpha12'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.32-alpha'
 
@@ -27,9 +25,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven {
-            url "https://kotlin.bintray.com/kotlinx"
-        }
+      
     }
 }
 
