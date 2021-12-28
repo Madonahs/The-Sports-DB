@@ -4,11 +4,11 @@ apply plugin: 'kotlin-kapt'
 apply plugin:  'dagger.hilt.android.plugin'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     defaultConfig {
         applicationId "com.madonasyombua.sportsdb"
         minSdkVersion 24
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -49,8 +49,6 @@ ext {
     moshiVersion = "1.11.0"
     retrofit = "2.9.0"
 
-    daggerHiltVersion = "1.0.0-alpha03"
-    daggerHiltCoreVersion = "2.32-alpha"
 }
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -82,13 +80,16 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
 
     // hilt
-    implementation "com.google.dagger:hilt-android:${daggerHiltCoreVersion}"
-    implementation "androidx.hilt:hilt-common:${daggerHiltVersion}"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:${daggerHiltVersion}"
-    kapt "androidx.hilt:hilt-compiler:${daggerHiltVersion}"
-    kapt "com.google.dagger:hilt-android-compiler:${daggerHiltCoreVersion}"
-    androidTestImplementation "com.google.dagger:hilt-android-testing:${daggerHiltCoreVersion}"
-    kaptAndroidTest "com.google.dagger:hilt-compiler:${daggerHiltCoreVersion}"
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    implementation "androidx.hilt:hilt-common:1.0.0"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha07"
+
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+    annotationProcessor "androidx.hilt:hilt-compiler:1.0.0"
+    kapt "com.google.dagger:hilt-android-compiler:2.38.1"
+
+    androidTestImplementation "com.google.dagger:hilt-android-testing:2.38.1"
+    kaptAndroidTest "com.google.dagger:hilt-compiler:2.38.1"
 
     implementation "dev.chrisbanes.accompanist:accompanist-coil:0.6.0"
     //Room Persistent Library
